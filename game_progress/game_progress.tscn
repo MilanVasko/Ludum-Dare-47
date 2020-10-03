@@ -2,5 +2,7 @@
 
 [ext_resource path="res://game_progress/game_progress.gd" type="Script" id=1]
 
-[node name="GameProgress" type="Node2D"]
+[node name="GameProgress" type="Node2D" groups=[
+"game_progress",
+]]
 script = ExtResource( 1 )
