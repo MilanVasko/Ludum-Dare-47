@@ -2,8 +2,22 @@ extends Control
 
 onready var current_time_node = $Time
 onready var countdown = $Countdown
+onready var finished = $Finished
 
-func on_elapsed_time_changed(new_elapsed_time: float):
+func _ready():
+	finished.visible = false
+
+func on_boat_finished(boat: Node, elapsed_time: float, place: int, boat_count: int) -> void:
+	if !boat.is_in_group("player"):
+		return
+
+	finished.visible = true
+	if place == 1:
+		finished.text = "You've won!"
+	else:
+		finished.text = "Place: " + str(place) + "/" + str(boat_count)
+
+func on_elapsed_time_changed(new_elapsed_time: float) -> void:
 	var is_countdown = new_elapsed_time < 0.0
 	countdown.visible = is_countdown
 	current_time_node.visible = !is_countdown

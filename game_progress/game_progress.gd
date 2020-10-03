@@ -2,6 +2,7 @@ extends Node2D
 
 var rounds_needed = 1
 var boat_progresses = {}
+var finished_boats = []
 
 var elapsed_time = -5.0
 
@@ -31,7 +32,10 @@ func on_boat_checkpoint_entered(boat: Node, checkpoint_index: int, checkpoint_co
 		BoatProgress.CheckpointProgress.GOING_BACKWARDS:
 			print("on_going_backwards")
 		BoatProgress.CheckpointProgress.FINISHED:
-			print("on_won")
+			finished_boats.append(FinishEntry.new(boat, elapsed_time))
+			var place = finished_boats.size()
+			var boat_count = boat_progresses.size()
+			get_tree().call_group("checkpoint_progress_listener", "on_boat_finished", boat, elapsed_time, place, boat_count)
 
 func get_node_key(node: Node) -> String:
 	return str(node.get_path())
@@ -40,6 +44,14 @@ func get_boat_progress(boat: Node) -> BoatProgress:
 	var node_key = self.get_node_key(boat)
 	assert(self.boat_progresses.has(node_key))
 	return self.boat_progresses[node_key]
+
+class FinishEntry:
+	var boat: Node
+	var finish_time: float
+
+	func _init(boat_: Node, finish_time_: float):
+		self.boat = boat_
+		self.finish_time = finish_time_
 
 class BoatProgress:
 	enum CheckpointProgress {

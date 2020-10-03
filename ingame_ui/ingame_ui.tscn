@@ -4,6 +4,7 @@
 [ext_resource path="res://fonts/tuffy_bold_big.tres" type="DynamicFont" id=2]
 
 [node name="IngameUI" type="Control" groups=[
+"checkpoint_progress_listener",
 "elapsed_time_listener",
 ]]
 anchor_right = 1.0
@@ -24,12 +25,30 @@ __meta__ = {
 }
 
 [node name="Countdown" type="Label" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 custom_fonts/font = ExtResource( 2 )
 text = "5"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Finished" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 2 )
+text = "You've finished at the 2 place."
+align = 1
+valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
