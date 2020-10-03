@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+class_name Boat
+
 onready var left_paddle = $LeftPaddle
 onready var right_paddle = $RightPaddle
 var impulse = 1000

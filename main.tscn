@@ -5,7 +5,7 @@
 [ext_resource path="res://game_progress/game_progress.tscn" type="PackedScene" id=4]
 [ext_resource path="res://checkpoint/checkpoint.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ingame_ui/ingame_ui.tscn" type="PackedScene" id=6]
-[ext_resource path="res://ingame_input_handler/ingame_input_handler.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ingame_input_handler/player/player_input_handler.tscn" type="PackedScene" id=7]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=8]
 
 [node name="Main" type="Node2D"]
@@ -33,7 +33,9 @@ scale = Vector2( 0.822783, 1 )
 position = Vector2( -1396.13, 42.8115 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
-position = Vector2( -1333.82, 21.9215 )
+position = Vector2( -1331.58, 203.76 )
+linear_damp = 0.5
+angular_damp = 0.5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

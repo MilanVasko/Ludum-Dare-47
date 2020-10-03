@@ -7,7 +7,7 @@ onready var finished = $Finished
 func _ready():
 	finished.visible = false
 
-func on_boat_finished(boat: Node, elapsed_time: float, place: int, boat_count: int) -> void:
+func on_boat_finished(boat: Node, _elapsed_time: float, place: int, boat_count: int) -> void:
 	if !boat.is_in_group("player"):
 		return
 

@@ -4,7 +4,7 @@ var rounds_needed = 1
 var boat_progresses = {}
 var finished_boats = []
 
-var elapsed_time = -5.0
+var elapsed_time = -1.0
 
 func _ready():
 	get_tree().call_group("elapsed_time_listener", "on_elapsed_time_changed", elapsed_time)

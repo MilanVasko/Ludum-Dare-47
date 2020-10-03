@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ingame_input_handler/player/player_input_handler.gd" type="Script" id=1]
+
+[node name="InputHandler" type="Node2D"]
+script = ExtResource( 1 )
+boat_group = "player"
