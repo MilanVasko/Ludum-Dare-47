@@ -15,18 +15,16 @@ func _on_back_pressed():
 	assert(err == OK)
 
 func _on_play_pressed():
-	print("TODO")
-	pass
+	var err = get_tree().change_scene("res://ingame/split_screen.tscn")
+	assert(err == OK)
 
 func _on_name_changed(index: int, new_name: String):
 	Settings.player_names[index] = new_name
 	update_summary(Settings.player_names)
 
 func update_summary(names: Array) -> void:
-	var non_empty_names = []
-	for name in names:
-		if name != "":
-			non_empty_names.append(name)
+	var non_empty_names = Settings.get_non_empty_player_names()
+
 	if non_empty_names.size() < 2:
 		play.visible = false
 		summary.text = "Please specify at least two players."
