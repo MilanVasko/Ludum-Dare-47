@@ -5,6 +5,3 @@
 [node name="Player" groups=[
 "player",
 ] instance=ExtResource( 1 )]
-
-[node name="Camera2D" type="Camera2D" parent="." index="4"]
-current = true

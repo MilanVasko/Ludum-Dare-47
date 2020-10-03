@@ -5,7 +5,7 @@ export(NodePath) var game_progress_path
 onready var game_progress_node = get_node(game_progress_path)
 var boats = []
 
-func on_boat_registered(boat: Boat) -> void:
+func on_boat_registered(boat: Boat, _index: int) -> void:
 	boats.append(boat)
 
 func _physics_process(delta) -> void:

@@ -2,7 +2,7 @@ extends Control
 
 func _on_race_with_time_pressed():
 	Settings.last_selected_game_mode = Settings.GameMode.RACE_WITH_TIME
-	var err = get_tree().change_scene("res://ingame/main.tscn")
+	var err = get_tree().change_scene("res://ingame/split_screen/split_screen.tscn")
 	assert(err == OK)
 
 func _on_race_with_friends_pressed():

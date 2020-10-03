@@ -15,7 +15,7 @@ func _on_back_pressed():
 	assert(err == OK)
 
 func _on_play_pressed():
-	var err = get_tree().change_scene("res://ingame/split_screen.tscn")
+	var err = get_tree().change_scene("res://ingame/split_screen/split_screen.tscn")
 	assert(err == OK)
 
 func _on_name_changed(index: int, new_name: String):

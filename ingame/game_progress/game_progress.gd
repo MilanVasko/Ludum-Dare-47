@@ -13,7 +13,7 @@ func _process(delta):
 	elapsed_time += delta
 	get_tree().call_group("elapsed_time_listener", "on_elapsed_time_changed", elapsed_time)
 
-func on_boat_registered(boat: Node) -> void:
+func on_boat_registered(boat: Node, _index: int) -> void:
 	var node_key = self.get_node_key(boat)
 	print("Registering boat " + node_key + ", rounds needed: " + str(rounds_needed))
 	assert(!boat_progresses.has(node_key))

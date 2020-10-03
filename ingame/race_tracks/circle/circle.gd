@@ -12,7 +12,7 @@ func _ready():
 
 func spawn_player(player_name: String, spawn_point: Node2D) -> void:
 	var player = player_scene.instance()
-	add_child(player)
+	$Players.add_child(player)
 	player.name = player_name
 	player.global_position = spawn_point.global_position
 

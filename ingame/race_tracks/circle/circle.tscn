@@ -71,3 +71,5 @@ position = Vector2( -1312.69, 190.148 )
 
 [node name="Player4" type="Node2D" parent="PlayerSpawnPoints"]
 position = Vector2( -1163.91, 190.148 )
+
+[node name="Players" type="Node2D" parent="."]
