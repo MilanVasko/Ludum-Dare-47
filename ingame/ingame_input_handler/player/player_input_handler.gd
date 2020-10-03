@@ -1,4 +1,4 @@
-extends "res://ingame_input_handler/base_input_handler.gd"
+extends "res://ingame/ingame_input_handler/base_input_handler.gd"
 
 func handle_boat(boat: Boat, _delta: float) -> void:
 	if Input.is_action_just_pressed("right"):

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/circle.png-40cf64d396d24a3708a821fecad39db0.stex"
+path="res://.import/boat.png-b1faf69c5f2546c90d9ab3ce65b32320.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://race_track/circle.png"
-dest_files=[ "res://.import/circle.png-40cf64d396d24a3708a821fecad39db0.stex" ]
+source_file="res://ingame/boat/boat.png"
+dest_files=[ "res://.import/boat.png-b1faf69c5f2546c90d9ab3ce65b32320.stex" ]
 
 [params]
 

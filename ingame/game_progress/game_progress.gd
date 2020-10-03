@@ -1,6 +1,6 @@
 extends Node2D
 
-var rounds_needed = 1
+var rounds_needed = 3
 var boat_progresses = {}
 var finished_boats = []
 

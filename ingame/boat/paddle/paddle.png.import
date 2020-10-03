@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/paddle.png-a4683e4ede11a7ce0fcaad8ccf91f6a0.stex"
+path="res://.import/paddle.png-d1c91ec2d5fc5d51c895d6472c5174a1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://boat/paddle/paddle.png"
-dest_files=[ "res://.import/paddle.png-a4683e4ede11a7ce0fcaad8ccf91f6a0.stex" ]
+source_file="res://ingame/boat/paddle/paddle.png"
+dest_files=[ "res://.import/paddle.png-d1c91ec2d5fc5d51c895d6472c5174a1.stex" ]
 
 [params]
 

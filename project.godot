@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "RigidBody2D",
 "class": "Boat",
 "language": "GDScript",
-"path": "res://boat/boat.gd"
+"path": "res://ingame/boat/boat.gd"
 } ]
 _global_script_class_icons={
 "Boat": ""

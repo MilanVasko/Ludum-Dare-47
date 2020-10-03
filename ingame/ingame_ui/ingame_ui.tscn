@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://ingame_ui/ingame_ui.gd" type="Script" id=1]
+[ext_resource path="res://ingame/ingame_ui/ingame_ui.gd" type="Script" id=1]
 [ext_resource path="res://fonts/tuffy_bold_big.tres" type="DynamicFont" id=2]
+
 
 [node name="IngameUI" type="Control" groups=[
 "checkpoint_progress_listener",
