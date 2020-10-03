@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://main_menu/game_mode_menu/race_with_friends_menu/race_with_friends_menu.gd" type="Script" id=1]
+[ext_resource path="res://main_menu/game_mode_menu/race_with_friends_menu/player_settings/player_settings.tscn" type="PackedScene" id=2]
+
+[node name="RaceWithFriendsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SetPlayers" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 100.0
+margin_bottom = 150.0
+text = "Please specify amount of players and their controls."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 150.0
+margin_right = -100.0
+margin_bottom = -150.0
+size_flags_horizontal = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerSettings" parent="HBoxContainer" instance=ExtResource( 2 )]
+margin_right = 203.0
+
+[node name="PlayerSettings2" parent="HBoxContainer" instance=ExtResource( 2 )]
+margin_left = 207.0
+margin_right = 410.0
+
+[node name="PlayerSettings3" parent="HBoxContainer" instance=ExtResource( 2 )]
+margin_left = 414.0
+margin_right = 617.0
+
+[node name="PlayerSettings4" parent="HBoxContainer" instance=ExtResource( 2 )]
+margin_left = 621.0
+margin_right = 824.0
+
+[node name="Back" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 150.0
+margin_bottom = -0.249268
+text = "Back"
+
+[node name="Summary" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = -100.0
+margin_right = -100.0
+margin_bottom = -50.0
+grow_horizontal = 2
+text = "Players:"
+align = 1
+valign = 1
+
+[node name="Play" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = -50.0
+text = "Play"
+[connection signal="name_changed" from="HBoxContainer/PlayerSettings" to="." method="_on_name_changed"]
+[connection signal="name_changed" from="HBoxContainer/PlayerSettings2" to="." method="_on_name_changed"]
+[connection signal="name_changed" from="HBoxContainer/PlayerSettings3" to="." method="_on_name_changed"]
+[connection signal="name_changed" from="HBoxContainer/PlayerSettings4" to="." method="_on_name_changed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
