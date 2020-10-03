@@ -36,10 +36,12 @@ func on_elapsed_time_changed(new_elapsed_time: float) -> void:
 		current_time_node.text = format_time(new_elapsed_time)
 
 func _on_play_again_pressed():
-	get_tree().reload_current_scene()
+	var err = get_tree().reload_current_scene()
+	assert(err == OK)
 
 func _on_main_menu_pressed():
-	get_tree().change_scene("res://main_menu/main_menu.tscn")
+	var err = get_tree().change_scene("res://main_menu/main_menu.tscn")
+	assert(err == OK)
 
 func format_time(time: float) -> String:
 	var seconds = int(time)
