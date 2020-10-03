@@ -1,7 +1,7 @@
 extends Control
 
 func _on_race_with_time_pressed():
-	var err = get_tree().change_scene("res://main.tscn")
+	var err = get_tree().change_scene("res://ingame/main.tscn")
 	assert(err == OK)
 
 func _on_race_with_friends_pressed():
