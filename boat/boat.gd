@@ -4,7 +4,7 @@ onready var left_paddle = $LeftPaddle
 onready var right_paddle = $RightPaddle
 var impulse = 1000
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var paddle = null
 	if Input.is_action_just_pressed("right"):
 		paddle = right_paddle
