@@ -7,7 +7,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.7106, 64.1382 )
 
-[node name="Boat" type="RigidBody2D"]
+[node name="Boat" type="RigidBody2D" groups=[
+"boat",
+]]
 mass = 10.0
 linear_damp = 0.5
 angular_damp = 0.5

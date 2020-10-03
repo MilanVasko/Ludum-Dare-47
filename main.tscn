@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://boat/boat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://race_track/race_track.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game_progress/game_progress.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node2D"]
 
+[node name="GameProgress" parent="." groups=[
+"game_progress",
+] instance=ExtResource( 4 )]
+
 [node name="RaceTrack" parent="." instance=ExtResource( 2 )]
 
-[node name="Boat" parent="." instance=ExtResource( 1 )]
-position = Vector2( -1305.41, 102.299 )
-
-[node name="Camera2D" type="Camera2D" parent="Boat"]
-current = true
-zoom = Vector2( 1.5, 1.5 )
-process_mode = 0
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1333.82, 21.9215 )
