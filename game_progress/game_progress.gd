@@ -1,9 +1,9 @@
 extends Node2D
 
-var rounds_needed = 3
+var rounds_needed = 1
 var boat_progresses = {}
 
-var elapsed_time = -6.0
+var elapsed_time = -5.0
 
 func _ready():
 	get_tree().call_group("elapsed_time_listener", "on_elapsed_time_changed", elapsed_time)
@@ -25,36 +25,28 @@ func on_boat_checkpoint_entered(boat: Node, checkpoint_index: int, checkpoint_co
 
 	match boat_progress.progress_to_checkpoint(checkpoint_index, checkpoint_count):
 		BoatProgress.CheckpointProgress.NEW_CHECKPOINT:
-			on_new_checkpoint(boat, checkpoint_index, checkpoint_count)
+			print("on_new_checkpoint")
 		BoatProgress.CheckpointProgress.NEW_ROUND:
-			on_new_round(boat, boat_progress.rounds)
+			print("on_new_round")
 		BoatProgress.CheckpointProgress.GOING_BACKWARDS:
-			on_going_backwards(boat)
-		BoatProgress.CheckpointProgress.WON:
-			on_won(boat)
-
-func on_new_checkpoint(boat: Node, checkpoint_index: int, checkpoint_count: int):
-	print("new checkpoint")
-
-func on_new_round(boat: Node, new_round: int):
-	print("new round")
-
-func on_going_backwards(boat: Node):
-	print("going backwards")
-
-func on_won(boat: Node):
-	print("won")
+			print("on_going_backwards")
+		BoatProgress.CheckpointProgress.FINISHED:
+			print("on_won")
 
 func get_node_key(node: Node) -> String:
 	return str(node.get_path())
 
+func get_boat_progress(boat: Node) -> BoatProgress:
+	var node_key = self.get_node_key(boat)
+	assert(self.boat_progresses.has(node_key))
+	return self.boat_progresses[node_key]
 
 class BoatProgress:
 	enum CheckpointProgress {
 		NEW_CHECKPOINT,
 		NEW_ROUND,
 		GOING_BACKWARDS,
-		WON
+		FINISHED
 	}
 
 	var rounds: int
@@ -66,13 +58,16 @@ class BoatProgress:
 		self.rounds_needed = rounds_needed_
 		self.current_checkpoint_index = -1
 
+	func has_finished() -> bool:
+		return self.rounds == self.rounds_needed
+
 	func progress_to_checkpoint(checkpoint_index: int, checkpoint_count: int):
 		if checkpoint_index == self.current_checkpoint_index + 1:
 			if checkpoint_count == checkpoint_index + 1:
 				self.rounds += 1
 				self.current_checkpoint_index = 0
-				if self.rounds == self.rounds_needed:
-					return CheckpointProgress.WON
+				if self.has_finished():
+					return CheckpointProgress.FINISHED
 				else:
 					return CheckpointProgress.NEW_ROUND
 			else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://race_track/race_track.tscn" type="PackedScene" id=2]
@@ -6,8 +6,12 @@
 [ext_resource path="res://game_progress/game_progress.tscn" type="PackedScene" id=4]
 [ext_resource path="res://checkpoint/checkpoint.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ingame_ui/ingame_ui.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ingame_input_handler/ingame_input_handler.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node2D"]
+
+[node name="InputHandler" parent="." instance=ExtResource( 7 )]
+game_progress_path = NodePath("../GameProgress")
 
 [node name="GameProgress" parent="." instance=ExtResource( 4 )]
 

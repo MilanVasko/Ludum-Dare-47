@@ -12,13 +12,13 @@ func on_elapsed_time_changed(new_elapsed_time: float):
 		var time_until_start = -new_elapsed_time
 		var whole_seconds = int(time_until_start)
 
-		if whole_seconds == 0:
+		countdown.rect_scale = Vector2.ONE * (time_until_start - whole_seconds)
+		countdown.text = str(whole_seconds + 1)
+	else:
+		if new_elapsed_time < 1.0:
+			countdown.visible = true
 			countdown.rect_scale = Vector2.ONE
 			countdown.text = "Go!"
-		else:
-			countdown.rect_scale = Vector2.ONE * (time_until_start - whole_seconds)
-			countdown.text = str(whole_seconds)
-	else:
 		current_time_node.text = format_time(new_elapsed_time)
 
 func format_time(time: float) -> String:
