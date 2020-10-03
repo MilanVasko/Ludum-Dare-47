@@ -10,41 +10,41 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SelectGameMode" type="Label" parent="."]
+[node name="SelectMap" type="Label" parent="."]
 anchor_right = 1.0
-margin_top = 100.0
-margin_bottom = 150.0
-text = "Please select game mode."
+margin_top = 58.3777
+margin_bottom = 108.378
+text = "Please select a map."
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RaceWithTime" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -200.0
-margin_top = -131.0
-margin_right = 200.0
-margin_bottom = -30.9999
-text = "Race with time"
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 150.0
+margin_top = 100.0
+margin_right = -150.0
+margin_bottom = -100.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RaceWithFriends" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -200.0
-margin_top = 30.0
-margin_right = 200.0
-margin_bottom = 130.0
-text = "Race with friends (split screen)"
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 724.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Circle" type="Button" parent="ScrollContainer/VBoxContainer"]
+margin_right = 724.0
+margin_bottom = 31.0
+text = "Circle"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -56,6 +56,8 @@ margin_top = -50.0
 margin_right = 150.0
 margin_bottom = -0.249268
 text = "Back"
-[connection signal="pressed" from="RaceWithTime" to="." method="_on_race_with_time_pressed"]
-[connection signal="pressed" from="RaceWithFriends" to="." method="_on_race_with_friends_pressed"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Circle" to="." method="_on_circle_map_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

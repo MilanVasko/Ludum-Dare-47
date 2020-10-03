@@ -7,7 +7,7 @@ onready var right_paddle = $RightPaddle
 var impulse = 1000
 
 func _ready():
-	get_tree().call_group("game_progress", "on_boat_registered", self)
+	get_tree().call_group("boat_register_listener", "on_boat_registered", self)
 
 func swing_left_paddle():
 	left_paddle.swing()

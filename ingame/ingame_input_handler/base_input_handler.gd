@@ -3,10 +3,10 @@ extends Node2D
 export(String) var boat_group
 export(NodePath) var game_progress_path
 onready var game_progress_node = get_node(game_progress_path)
-var boats
+var boats = []
 
-func _ready() -> void:
-	boats = get_tree().get_nodes_in_group(boat_group)
+func on_boat_registered(boat: Boat) -> void:
+	boats.append(boat)
 
 func _physics_process(delta) -> void:
 	for boat in boats:

@@ -24,6 +24,10 @@ config/name="Ludum Dare 47"
 run/main_scene="res://main_menu/main_menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Settings="*res://settings/settings.gd"
+
 [gui]
 
 theme/custom_font="res://fonts/tuffy_bold.tres"

@@ -4,6 +4,7 @@
 
 
 [node name="GameProgress" type="Node2D" groups=[
-"game_progress",
+"boat_register_listener",
+"checkpoint_progress_listener",
 ]]
 script = ExtResource( 1 )
