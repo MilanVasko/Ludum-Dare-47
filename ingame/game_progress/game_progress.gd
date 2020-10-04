@@ -26,14 +26,13 @@ func on_boat_checkpoint_entered(boat: Node, checkpoint_index: int, checkpoint_co
 
 	match boat_progress.progress_to_checkpoint(checkpoint_index, checkpoint_count):
 		BoatProgress.CheckpointProgress.NEW_CHECKPOINT:
-			get_tree().call_group("checkpoint_progress_listener", "on_boat_checkpoint_reached", boat, elapsed_time)
+			get_tree().call_group("checkpoint_progress_listener", "on_boat_checkpoint_reached", boat, boat_progress.current_checkpoint_index, checkpoint_count - 1, elapsed_time)
 		BoatProgress.CheckpointProgress.NEW_ROUND:
-			get_tree().call_group("checkpoint_progress_listener", "on_boat_checkpoint_reached", boat, elapsed_time)
+			get_tree().call_group("checkpoint_progress_listener", "on_boat_checkpoint_reached", boat, boat_progress.current_checkpoint_index, checkpoint_count - 1, elapsed_time)
 			get_tree().call_group("checkpoint_progress_listener", "on_boat_new_round_reached", boat, boat_progress.rounds, elapsed_time)
 		BoatProgress.CheckpointProgress.GOING_BACKWARDS:
 			get_tree().call_group("checkpoint_progress_listener", "on_boat_going_backwards", boat)
 		BoatProgress.CheckpointProgress.FINISHED:
-			get_tree().call_group("checkpoint_progress_listener", "on_boat_checkpoint_reached", boat, elapsed_time)
 			get_tree().call_group("checkpoint_progress_listener", "on_boat_new_round_reached", boat, boat_progress.rounds, elapsed_time)
 			finished_boats.append(FinishEntry.new(boat, elapsed_time))
 			var place = finished_boats.size()
@@ -71,16 +70,20 @@ class BoatProgress:
 	func _init(rounds_needed_: int):
 		self.rounds = 0
 		self.rounds_needed = rounds_needed_
-		self.current_checkpoint_index = -1
+		self.current_checkpoint_index = -2
 
 	func has_finished() -> bool:
 		return self.rounds == self.rounds_needed
 
 	func progress_to_checkpoint(checkpoint_index: int, checkpoint_count: int):
+		if self.current_checkpoint_index == -2 && checkpoint_index == checkpoint_count - 1:
+			self.current_checkpoint_index += 1
+			return CheckpointProgress.NEW_CHECKPOINT
+
 		if checkpoint_index == self.current_checkpoint_index + 1:
-			if checkpoint_count == checkpoint_index + 1:
+			if checkpoint_index + 1 == checkpoint_count:
 				self.rounds += 1
-				self.current_checkpoint_index = 0
+				self.current_checkpoint_index = -1
 				if self.has_finished():
 					return CheckpointProgress.FINISHED
 				else:

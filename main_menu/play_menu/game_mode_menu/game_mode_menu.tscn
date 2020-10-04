@@ -2,7 +2,6 @@
 
 [ext_resource path="res://main_menu/play_menu/game_mode_menu/game_mode_menu.gd" type="Script" id=1]
 
-
 [node name="GameModeMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -31,7 +30,7 @@ margin_left = -200.0
 margin_top = -131.0
 margin_right = 200.0
 margin_bottom = -30.9999
-text = "Race with time"
+text = "Race solo (just time)"
 __meta__ = {
 "_edit_use_anchors_": false
 }

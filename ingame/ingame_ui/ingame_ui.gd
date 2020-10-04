@@ -5,18 +5,28 @@ onready var countdown = $Countdown
 onready var finished = $Finished
 onready var rounds_current_node = $Rounds/Value/Current
 onready var rounds_max_node = $Rounds/Value/Max
+onready var checkpoints_node = $Checkpoints
+onready var checkpoints_current_node = $Checkpoints/Value/Current
+onready var checkpoints_max_node = $Checkpoints/Value/Max
 var viewport_index: int
 
 func _ready():
 	finished.visible = false
 	rounds_current_node.text = "0"
 	rounds_max_node.text = str(Settings.last_number_of_rounds)
+	checkpoints_node.visible = false
+	checkpoints_current_node.text = "0"
+	checkpoints_max_node.text = "X"
 
 func is_finished():
 	return finished.visible
 
-func on_boat_checkpoint_reached(boat: Node, elapsed_time: float) -> void:
-	print("on_boat_checkpoint_reached")
+func on_boat_checkpoint_reached(boat: Node, checkpoint_index: int, checkpoint_count: int, elapsed_time: float) -> void:
+	if !boat.is_in_group("player") || boat.get_index() != viewport_index:
+		return
+	checkpoints_node.visible = true
+	checkpoints_current_node.text = str(checkpoint_index + 1)
+	checkpoints_max_node.text = str(checkpoint_count)
 
 func on_boat_new_round_reached(boat: Node, new_round: int, elapsed_time: float) -> void:
 	if !boat.is_in_group("player") || boat.get_index() != viewport_index:
