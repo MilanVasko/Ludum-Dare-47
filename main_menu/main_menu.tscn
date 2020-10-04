@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://main_menu/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://fonts/tuffy_bold_title.tres" type="DynamicFont" id=2]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -23,4 +24,22 @@ text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -100.0
+text = "Made for Ludum Dare 47
+by Milan Vaško"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 200.0
+custom_fonts/font = ExtResource( 2 )
+text = "Awesome Ludum Boat Race"
+align = 1
+valign = 1
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
