@@ -3,12 +3,13 @@ extends Control
 onready var current_time_node = $Time
 onready var countdown = $Countdown
 onready var finished = $Finished
+var viewport_index: int
 
 func _ready():
 	finished.visible = false
 
 func on_boat_finished(boat: Node, _elapsed_time: float, place: int, boat_count: int) -> void:
-	if !boat.is_in_group("player"):
+	if !boat.is_in_group("player") || boat.get_index() != viewport_index:
 		return
 
 	finished.visible = true

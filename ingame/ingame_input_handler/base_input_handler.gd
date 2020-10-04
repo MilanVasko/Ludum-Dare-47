@@ -5,8 +5,8 @@ export(NodePath) var game_progress_path
 onready var game_progress_node = get_node(game_progress_path)
 var boats = [null, null, null, null]
 
-func on_boat_registered(boat: Boat, index: int) -> void:
-	boats[index] = boat
+func on_boat_registered(boat: Boat) -> void:
+	boats[boat.get_index()] = boat
 
 func _physics_process(delta) -> void:
 	for i in range(boats.size()):

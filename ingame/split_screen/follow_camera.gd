@@ -1,10 +1,10 @@
 extends Camera2D
 
-export(int) var index
+export(int) var viewport_index
 var target: Boat = null
 
-func on_boat_registered(boat: Boat, boat_index: int) -> void:
-	if self.index != boat_index:
+func on_boat_registered(boat: Boat) -> void:
+	if self.viewport_index != boat.get_index():
 		return
 	self.target = boat
 
