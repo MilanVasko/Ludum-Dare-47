@@ -11,18 +11,19 @@ viewport_container_scene = ExtResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GridContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+columns = 2
 
 [node name="ViewportContainer0" parent="CanvasLayer/GridContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1024.0
+margin_right = 512.0
 margin_bottom = 600.0
+
+[node name="Viewport" parent="CanvasLayer/GridContainer/ViewportContainer0" index="0"]
+size = Vector2( 512, 600 )
 
 [node name="Main" parent="CanvasLayer/GridContainer/ViewportContainer0/Viewport" index="2" instance=ExtResource( 1 )]
 
