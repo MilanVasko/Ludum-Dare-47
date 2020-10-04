@@ -5,7 +5,7 @@ var is_rotating = false
 var rotation_multiplier = -1.0
 const ROTATION_SPEED = PI * 5
 const MAX_ROTATION = 0
-const MIN_ROTATION = -PI
+const MIN_ROTATION = -PI * 3 / 4
 
 func swing():
 	is_rotating = true
