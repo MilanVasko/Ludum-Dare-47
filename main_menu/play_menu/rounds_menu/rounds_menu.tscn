@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://main_menu/play_menu/rounds_menu/rounds_menu.gd" type="Script" id=1]
+
+[node name="RoundsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectRounds" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 58.3777
+margin_bottom = 108.378
+text = "Please specify number of rounds."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 150.0
+margin_top = 100.0
+margin_right = -150.0
+margin_bottom = -150.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rounds" type="HBoxContainer" parent="Container"]
+margin_right = 724.0
+margin_bottom = 35.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Container/Rounds"]
+margin_top = 5.0
+margin_right = 80.0
+margin_bottom = 30.0
+text = "Rounds:"
+
+[node name="Value" type="SpinBox" parent="Container/Rounds"]
+margin_left = 100.0
+margin_right = 724.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 100.0
+value = 1.0
+
+[node name="Confirm" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -150.0
+margin_right = 100.0
+margin_bottom = -100.0
+text = "Confirm"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 150.0
+margin_bottom = -0.249268
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

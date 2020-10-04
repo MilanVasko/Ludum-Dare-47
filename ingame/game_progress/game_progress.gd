@@ -1,6 +1,6 @@
 extends Node2D
 
-var rounds_needed = 1
+var rounds_needed = Settings.last_number_of_rounds
 var boat_progresses = {}
 var finished_boats = []
 

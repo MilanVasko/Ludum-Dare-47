@@ -9,6 +9,7 @@ enum GameMode {
 }
 
 var last_selected_game_mode: int = GameMode.RACE_WITH_TIME
+var last_number_of_rounds: int = 3
 var last_selected_map: String = ""
 var player_names: Array = ["", "", "", ""]
 
