@@ -8,6 +8,9 @@ var viewport_index: int
 func _ready():
 	finished.visible = false
 
+func is_finished():
+	return finished.visible
+
 func on_boat_finished(boat: Node, _elapsed_time: float, place: int, boat_count: int) -> void:
 	if !boat.is_in_group("player") || boat.get_index() != viewport_index:
 		return
@@ -19,6 +22,9 @@ func on_boat_finished(boat: Node, _elapsed_time: float, place: int, boat_count: 
 		finished.text = "Place: " + str(place) + "/" + str(boat_count)
 
 func on_elapsed_time_changed(new_elapsed_time: float) -> void:
+	if self.is_finished():
+		return
+
 	var is_countdown = new_elapsed_time < 0.0
 	countdown.visible = is_countdown
 	current_time_node.visible = !is_countdown
