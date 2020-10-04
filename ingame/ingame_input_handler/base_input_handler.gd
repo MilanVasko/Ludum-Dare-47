@@ -3,17 +3,17 @@ extends Node2D
 export(String) var boat_group
 export(NodePath) var game_progress_path
 onready var game_progress_node = get_node(game_progress_path)
-var boats = []
+var boats = [null, null, null, null]
 
-func on_boat_registered(boat: Boat, _index: int) -> void:
-	boats.append(boat)
+func on_boat_registered(boat: Boat, index: int) -> void:
+	boats[index] = boat
 
 func _physics_process(delta) -> void:
-	for boat in boats:
-		if self.can_play(boat):
-			self.handle_boat(boat, delta)
+	for i in range(boats.size()):
+		if boats[i] != null && self.can_play(boats[i]):
+			self.handle_boat(boats[i], i, delta)
 
-func handle_boat(_boat: Boat, _delta: float) -> void:
+func handle_boat(_boat: Boat, _index: int, _delta: float) -> void:
 	assert(false, "Abstract class")
 
 func can_play(boat: Boat) -> bool:
