@@ -6,7 +6,7 @@ func _ready():
 	self.set_paused(false)
 
 func _process(_delta):
-	if Input.is_action_just_pressed("pause"):
+	if !last_boat_finished && Input.is_action_just_pressed("pause"):
 		self.toggle_pause()
 
 func _exit_tree():
@@ -27,6 +27,7 @@ func on_boat_finished(_boat: Node, _elapsed_time: float, place: int, boat_count:
 		return
 	last_boat_finished = true
 	$Label.visible = false
+	$HBoxContainer/Resume.visible = false
 	set_paused(true)
 
 func _on_resume_pressed():
