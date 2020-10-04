@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ingame/environment/bush/bush_1.png" type="Texture" id=1]
+[ext_resource path="res://ingame/environment/bush/bush.gd" type="Script" id=2]
+[ext_resource path="res://ingame/environment/bush/bush_2.png" type="Texture" id=3]
+
+[node name="Bush" type="Sprite"]
+scale = Vector2( 0.339765, 0.339765 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+texture1 = ExtResource( 1 )
+texture2 = ExtResource( 3 )
+color_min = Color( 0.74902, 0.74902, 0.74902, 1 )
+color_max = Color( 1, 1, 1, 1 )

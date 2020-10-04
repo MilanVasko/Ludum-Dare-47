@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arrow.png-6391dabde72335f56a473830cec3dd1f.stex"
+path="res://.import/bush_1.png-b1c09cd07bc6caa12c52bcf21c5a8e72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ingame/race_tracks/arrow.png"
-dest_files=[ "res://.import/arrow.png-6391dabde72335f56a473830cec3dd1f.stex" ]
+source_file="res://ingame/environment/bush/bush_1.png"
+dest_files=[ "res://.import/bush_1.png-b1c09cd07bc6caa12c52bcf21c5a8e72.stex" ]
 
 [params]
 

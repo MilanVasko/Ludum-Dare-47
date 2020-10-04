@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://ingame/checkpoint/checkpoint.tscn" type="PackedScene" id=2]
@@ -6,12 +6,13 @@
 [ext_resource path="res://ingame/player/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ingame/race_tracks/race_track.gd" type="Script" id=5]
 [ext_resource path="res://addons/rmsmartshape/materials/shape_material.gd" type="Script" id=6]
-[ext_resource path="res://ingame/race_tracks/wall_texture.tres" type="Texture" id=7]
+[ext_resource path="res://ingame/race_tracks/grass.png" type="Texture" id=7]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=8]
 [ext_resource path="res://addons/rmsmartshape/vertex_properties.gd" type="Script" id=9]
 [ext_resource path="res://addons/rmsmartshape/shapes/shape_closed.gd" type="Script" id=10]
 [ext_resource path="res://ingame/race_tracks/water.png" type="Texture" id=11]
-[ext_resource path="res://ingame/race_tracks/arrow.tscn" type="PackedScene" id=12]
+[ext_resource path="res://ingame/environment/arrow/arrow.tscn" type="PackedScene" id=12]
+[ext_resource path="res://ingame/environment/bush/bush.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 6 )
@@ -536,3 +537,920 @@ material_overrides = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OuterLeft"]
 modulate = Color( 1, 1, 1, 0.3 )
 polygon = PoolVector2Array( -1766.97, 1774.03, 3.17148, 1762.85, 57.2393, 3180.33, -3562.16, 3371.03, -3484.16, -3075.75, 6.74066, -3121.99, 2.83204, -1763.31, -1761.22, -1773.28 )
+
+[node name="Bushes" type="Node2D" parent="."]
+
+[node name="Bush" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1875.46, 12.4349 )
+
+[node name="Bush2" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2014.28, -86.3433 )
+
+[node name="Bush3" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1880.8, -289.239 )
+
+[node name="Bush4" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2147.77, -481.456 )
+
+[node name="Bush5" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2147.77, -241.185 )
+
+[node name="Bush6" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2241.21, 124.561 )
+
+[node name="Bush7" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1950.21, 295.421 )
+
+[node name="Bush8" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1992.93, 151.258 )
+
+[node name="Bush9" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1902.16, -574.895 )
+
+[node name="Bush10" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2214.51, -857.881 )
+
+[node name="Bush11" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2430.75, -468.107 )
+
+[node name="Bush12" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2278.58, -182.452 )
+
+[node name="Bush13" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2628.31, 119.222 )
+
+[node name="Bush14" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2166.45, -697.7 )
+
+[node name="Bush15" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2460.12, -700.37 )
+
+[node name="Bush16" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2283.92, -937.971 )
+
+[node name="Bush17" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2446.77, -1164.89 )
+
+[node name="Bush18" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1923.51, -1266.34 )
+
+[node name="Bush19" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1880.8, -727.066 )
+
+[node name="Bush20" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2083.7, -1020.73 )
+
+[node name="Bush21" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1982.25, -991.365 )
+
+[node name="Bush22" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2334.65, -1295.71 )
+
+[node name="Bush23" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1905.95, -1107.71 )
+
+[node name="Bush24" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2146.22, -1561.56 )
+
+[node name="Bush25" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2191.6, -1390.7 )
+
+[node name="Bush26" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1865.9, -1481.47 )
+
+[node name="Bush27" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2200.17, -1787.21 )
+
+[node name="Bush28" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2047.44, -1809.84 )
+
+[node name="Bush29" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1889.05, -1741.95 )
+
+[node name="Bush30" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1849.45, -2030.45 )
+
+[node name="Bush31" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1747.63, -1872.06 )
+
+[node name="Bush32" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1340.33, -2154.9 )
+
+[node name="Bush33" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1560.95, -1939.94 )
+
+[node name="Bush34" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1385.59, -1855.09 )
+
+[node name="Bush35" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1527.01, -2126.62 )
+
+[node name="Bush36" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1204.57, -1956.91 )
+
+[node name="Bush37" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1057.49, -2183.19 )
+
+[node name="Bush38" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -961.323, -1889.03 )
+
+[node name="Bush39" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2075.72, -2132.28 )
+
+[node name="Bush40" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2364.22, -1900.35 )
+
+[node name="Bush41" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2120.98, -1990.86 )
+
+[node name="Bush42" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -701.108, -1894.69 )
+
+[node name="Bush43" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -746.363, -2075.71 )
+
+[node name="Bush44" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -819.902, -1877.72 )
+
+[node name="Bush45" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -486.147, -1866.4 )
+
+[node name="Bush46" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -554.03, -2081.37 )
+
+[node name="Bush47" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -305.128, -1855.09 )
+
+[node name="Bush48" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -118.451, -2075.71 )
+
+[node name="Bush49" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -313.231, -2093.69 )
+
+[node name="Bush50" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -112.458, -1904.9 )
+
+[node name="Bush51" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 97.3047, -2078.71 )
+
+[node name="Bush52" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 73.3318, -1853.96 )
+
+[node name="Bush53" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 154.24, -1892.92 )
+
+[node name="Bush54" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 813.495, -1841.97 )
+
+[node name="Bush55" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 480.871, -1859.95 )
+
+[node name="Bush56" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 555.787, -2111.67 )
+
+[node name="Bush57" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 381.983, -2027.76 )
+
+[node name="Bush58" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -13.5702, -2297.46 )
+
+[node name="Bush59" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -522.995, -2231.53 )
+
+[node name="Bush60" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 286.091, -2216.55 )
+
+[node name="Bush61" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 960.329, -1991.8 )
+
+[node name="Bush62" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 759.556, -2222.54 )
+
+[node name="Bush63" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 711.61, -2009.78 )
+
+[node name="Bush64" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1107.16, -1865.94 )
+
+[node name="Bush65" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1271.98, -2237.52 )
+
+[node name="Bush66" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1370.87, -1892.91 )
+
+[node name="Bush67" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1268.98, -2042.75 )
+
+[node name="Bush68" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1514.7, -2018.77 )
+
+[node name="Bush69" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1775.41, -2252.51 )
+
+[node name="Bush70" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1820.36, -2000.79 )
+
+[node name="Bush71" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2117.02, -2150.62 )
+
+[node name="Bush72" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2338.77, -1841.97 )
+
+[node name="Bush73" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2554.53, -1755.07 )
+
+[node name="Bush74" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2087.06, -1979.82 )
+
+[node name="Bush75" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1832.34, -1829.99 )
+
+[node name="Bush76" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1631.57, -1934.87 )
+
+[node name="Bush77" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1868.3, -1590.26 )
+
+[node name="Bush78" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2323.79, -1662.18 )
+
+[node name="Bush79" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2419.68, -1338.54 )
+
+[node name="Bush80" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2629.44, -1497.36 )
+
+[node name="Bush81" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1841.33, -1386.49 )
+
+[node name="Bush82" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2114.03, -1269.62 )
+
+[node name="Bush83" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2161.97, -1566.28 )
+
+[node name="Bush84" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1862.31, -1125.78 )
+
+[node name="Bush85" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2272.85, -913.022 )
+
+[node name="Bush86" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2548.53, -1134.77 )
+
+[node name="Bush87" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2060.09, -984.941 )
+
+[node name="Bush88" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1859.31, -853.09 )
+
+[node name="Bush89" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2117.02, -709.252 )
+
+[node name="Bush90" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2659.41, -709.252 )
+
+[node name="Bush91" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1919.25, -664.303 )
+
+[node name="Bush92" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1826.35, -514.472 )
+
+[node name="Bush93" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2236.89, -421.577 )
+
+[node name="Bush94" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1913.25, -235.787 )
+
+[node name="Bush95" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2021.13, -334.675 )
+
+[node name="Bush96" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1952.21, 90.8441 )
+
+[node name="Bush97" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1850.32, -76.9662 )
+
+[node name="Bush98" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2272.85, 96.8373 )
+
+[node name="Bush99" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2503.58, -70.9731 )
+
+[node name="Bush100" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2111.03, -38.0103 )
+
+[node name="Bush101" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2239.88, -211.814 )
+
+[node name="Bush102" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1898.65, 214.722 )
+
+[node name="Bush103" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2154.58, 371.866 )
+
+[node name="Bush104" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1948.04, 421.255 )
+
+[node name="Bush105" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1871.72, 569.419 )
+
+[node name="Bush106" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2230.9, 722.074 )
+
+[node name="Bush107" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1957.02, 856.77 )
+
+[node name="Bush108" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2033.35, 663.706 )
+
+[node name="Bush109" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2280.29, 533.5 )
+
+[node name="Bush110" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2518.25, 942.076 )
+
+[node name="Bush111" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2037.84, 1076.77 )
+
+[node name="Bush112" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2154.58, 847.79 )
+
+[node name="Bush113" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1988.45, 933.097 )
+
+[node name="Bush114" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1880.7, 1045.34 )
+
+[node name="Bush115" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1898.65, 1278.81 )
+
+[node name="Bush116" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2132.13, 1337.18 )
+
+[node name="Bush117" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1876.2, 1655.96 )
+
+[node name="Bush118" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1966, 1516.78 )
+
+[node name="Bush119" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1853.76, 1449.43 )
+
+[node name="Bush120" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2082.74, 1911.88 )
+
+[node name="Bush121" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2311.72, 1691.88 )
+
+[node name="Bush122" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2105.19, 1597.59 )
+
+[node name="Bush123" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2410.5, 1305.75 )
+
+[node name="Bush124" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2356.62, 1530.25 )
+
+[node name="Bush125" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2266.82, 1193.51 )
+
+[node name="Bush126" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1786.41, 2122.91 )
+
+[node name="Bush127" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1880.69, 1898.41 )
+
+[node name="Bush128" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2064.78, 2208.21 )
+
+[node name="Bush129" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 2338.66, 1938.82 )
+
+[node name="Bush130" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1458.65, 1898.41 )
+
+[node name="Bush131" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1669.67, 1844.54 )
+
+[node name="Bush132" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1579.87, 2091.48 )
+
+[node name="Bush133" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1728.04, 1934.33 )
+
+[node name="Bush134" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1539.47, 1956.78 )
+
+[node name="Bush135" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1274.56, 2306.99 )
+
+[node name="Bush136" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1472.12, 2149.84 )
+
+[node name="Bush137" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1211.71, 1853.51 )
+
+[node name="Bush138" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1126.4, 2060.05 )
+
+[node name="Bush139" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1328.44, 1961.27 )
+
+[node name="Bush140" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1018.64, 1840.05 )
+
+[node name="Bush141" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 897.417, 2235.15 )
+
+[node name="Bush142" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 1112.93, 2244.13 )
+
+[node name="Bush143" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 969.255, 2118.42 )
+
+[node name="Bush144" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 861.498, 1849.02 )
+
+[node name="Bush145" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 771.701, 1979.23 )
+
+[node name="Bush146" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 628.026, 2289.03 )
+
+[node name="Bush147" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 574.148, 2010.66 )
+
+[node name="Bush148" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 565.168, 1849.02 )
+
+[node name="Bush149" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 385.574, 1992.7 )
+
+[node name="Bush150" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 385.574, 2257.6 )
+
+[node name="Bush151" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 250.879, 1889.43 )
+
+[node name="Bush152" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 381.085, 1884.94 )
+
+[node name="Bush153" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 80.2648, 2226.17 )
+
+[node name="Bush154" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 80.2648, 1952.29 )
+
+[node name="Bush155" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -63.4103, 1884.94 )
+
+[node name="Bush156" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -296.882, 2167.8 )
+
+[node name="Bush157" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -144.228, 2289.03 )
+
+[node name="Bush158" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -76.88, 2086.99 )
+
+[node name="Bush159" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 273.328, 2064.54 )
+
+[node name="Bush160" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -337.291, 1880.45 )
+
+[node name="Bush161" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -175.657, 1974.74 )
+
+[node name="Bush162" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -512.395, 2060.05 )
+
+[node name="Bush163" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -507.905, 2262.09 )
+
+[node name="Bush164" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -368.72, 1974.74 )
+
+[node name="Bush165" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -525.865, 1858 )
+
+[node name="Bush166" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -768.317, 2024.13 )
+
+[node name="Bush167" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -691.989, 1840.05 )
+
+[node name="Bush168" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -651.581, 2006.17 )
+
+[node name="Bush169" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -903.012, 1835.56 )
+
+[node name="Bush170" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1140.97, 2042.09 )
+
+[node name="Bush171" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -992.809, 2203.72 )
+
+[node name="Bush172" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -916.482, 2037.6 )
+
+[node name="Bush173" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1127.5, 1884.94 )
+
+[node name="Bush174" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1325.06, 2091.48 )
+
+[node name="Bush175" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1343.02, 1880.45 )
+
+[node name="Bush176" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1423.83, 2015.15 )
+
+[node name="Bush177" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1432.81, 2190.25 )
+
+[node name="Bush178" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1589.96, 1965.76 )
+
+[node name="Bush179" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1527.1, 1817.6 )
+
+[node name="Bush180" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1729.14, 1992.7 )
+
+[node name="Bush181" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1904.25, 2239.64 )
+
+[node name="Bush182" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1482.2, 2468.62 )
+
+[node name="Bush183" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1675.27, 2293.52 )
+
+[node name="Bush184" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1841.39, 2158.82 )
+
+[node name="Bush185" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2047.92, 2217.19 )
+
+[node name="Bush186" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2079.35, 1920.86 )
+
+[node name="Bush187" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1868.33, 1920.86 )
+
+[node name="Bush188" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1922.21, 1732.29 )
+
+[node name="Bush189" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2182.62, 1750.25 )
+
+[node name="Bush190" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2339.76, 1875.96 )
+
+[node name="Bush191" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2169.15, 2042.09 )
+
+[node name="Bush192" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2492.42, 1664.94 )
+
+[node name="Bush193" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2573.24, 1772.7 )
+
+[node name="Bush194" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2267.93, 1539.23 )
+
+[node name="Bush195" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2321.8, 1638 )
+
+[node name="Bush196" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1998.54, 1575.14 )
+
+[node name="Bush197" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1958.13, 1368.61 )
+
+[node name="Bush198" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2178.13, 1418 )
+
+[node name="Bush199" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1877.31, 1584.12 )
+
+[node name="Bush200" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1890.78, 1162.08 )
+
+[node name="Bush201" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2151.19, 1242.9 )
+
+[node name="Bush202" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2375.68, 1233.92 )
+
+[node name="Bush203" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2416.09, 1373.1 )
+
+[node name="Bush204" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2546.3, 1444.94 )
+
+[node name="Bush205" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2604.66, 1090.24 )
+
+[node name="Bush206" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2604.66, 1233.92 )
+
+[node name="Bush207" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2272.42, 1022.89 )
+
+[node name="Bush208" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1863.84, 1009.42 )
+
+[node name="Bush209" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2052.41, 1094.73 )
+
+[node name="Bush210" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1913.23, 731.052 )
+
+[node name="Bush211" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1935.68, 901.666 )
+
+[node name="Bush212" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2191.6, 811.869 )
+
+[node name="Bush213" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1976.08, 636.766 )
+
+[node name="Bush214" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -1863.84, 443.702 )
+
+[node name="Bush215" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2420.58, 605.337 )
+
+[node name="Bush216" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2528.34, 713.093 )
+
+[node name="Bush217" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2425.07, 874.728 )
+
+[node name="Bush218" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2155.68, 605.337 )
+
+[node name="Bush219" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2052.41, 452.682 )
+
+[node name="Bush220" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2380.17, 264.108 )
+
+[node name="Bush221" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2321.8, 407.783 )
+
+[node name="Bush222" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2142.21, 295.537 )
+
+[node name="Bush223" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2514.87, 493.09 )
+
+[node name="Bush224" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2460.99, 66.5547 )
+
+[node name="Bush225" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -2492.42, -220.796 )
+
+[node name="Bush226" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -868.252, -892.037 )
+
+[node name="Bush227" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -664.482, -904.024 )
+
+[node name="Bush228" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -628.523, -346.654 )
+
+[node name="Bush229" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -756.89, -256.042 )
+
+[node name="Bush230" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -873.93, -527.877 )
+
+[node name="Bush231" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -666.278, -709.101 )
+
+[node name="Bush232" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -485.054, -520.326 )
+
+[node name="Bush233" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -360.462, -154.103 )
+
+[node name="Bush234" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -805.971, -18.1854 )
+
+[node name="Bush235" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -915.46, -263.593 )
+
+[node name="Bush236" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -930.562, -127.675 )
+
+[node name="Bush237" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -941.889, 204.569 )
+
+[node name="Bush238" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -670.053, 329.16 )
+
+[node name="Bush239" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -960.766, 634.975 )
+
+[node name="Bush240" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -915.46, 363.14 )
+
+[node name="Bush241" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -753.114, 695.383 )
+
+[node name="Bush242" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -677.604, 597.22 )
+
+[node name="Bush243" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -756.89, 457.527 )
+
+[node name="Bush244" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -892.807, 816.199 )
+
+[node name="Bush245" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -983.419, 963.444 )
+
+[node name="Bush246" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -787.094, 929.464 )
+
+[node name="Bush247" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -673.828, 835.077 )
+
+[node name="Bush248" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -439.748, 989.872 )
+
+[node name="Bush249" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -428.421, 846.403 )
+
+[node name="Bush250" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -492.605, 476.404 )
+
+[node name="Bush251" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -435.972, 665.179 )
+
+[node name="Bush252" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -171.687, 963.444 )
+
+[node name="Bush253" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -239.646, 691.608 )
+
+[node name="Bush254" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 17.0873, 986.097 )
+
+[node name="Bush255" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 171.883, 736.914 )
+
+[node name="Bush256" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 273.821, 944.566 )
+
+[node name="Bush257" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -65.9738, 729.363 )
+
+[node name="Bush258" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 526.779, 929.464 )
+
+[node name="Bush259" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 504.127, 680.281 )
+
+[node name="Bush260" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 421.066, 797.322 )
+
+[node name="Bush261" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 715.555, 910.587 )
+
+[node name="Bush262" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 919.431, 910.587 )
+
+[node name="Bush263" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 972.288, 937.015 )
+
+[node name="Bush264" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 972.288, 710.485 )
+
+[node name="Bush265" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 798.616, 782.22 )
+
+[node name="Bush266" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 817.493, 453.752 )
+
+[node name="Bush267" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 934.534, 480.18 )
+
+[node name="Bush268" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 919.431, 257.426 )
+
+[node name="Bush269" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 587.188, 423.548 )
+
+[node name="Bush270" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 757.085, 638.751 )
+
+[node name="Bush271" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 451.27, 449.976 )
+
+[node name="Bush272" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 530.556, 582.119 )
+
+[node name="Bush273" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 545.658, 106.406 )
+
+[node name="Bush274" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -266.074, 363.14 )
+
+[node name="Bush275" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 13.3124, 540.588 )
+
+[node name="Bush276" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 870.35, -78.5934 )
+
+[node name="Bush277" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 911.88, 113.957 )
+
+[node name="Bush278" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 994.942, -105.022 )
+
+[node name="Bush279" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 685.351, -78.5935 )
+
+[node name="Bush280" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 708.004, 208.344 )
+
+[node name="Bush281" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 481.474, -331.552 )
+
+[node name="Bush282" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 481.474, -82.3691 )
+
+[node name="Bush283" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 768.412, -331.552 )
+
+[node name="Bush284" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 855.248, -244.716 )
+
+[node name="Bush285" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 870.35, -512.776 )
+
+[node name="Bush286" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 568.31, -493.898 )
+
+[node name="Bush287" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 568.31, -290.021 )
+
+[node name="Bush288" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 885.595, -751.283 )
+
+[node name="Bush289" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 893.146, -928.731 )
+
+[node name="Bush290" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 753.453, -807.915 )
+
+[node name="Bush291" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 583.556, -970.262 )
+
+[node name="Bush292" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 417.434, -709.752 )
+
+[node name="Bush293" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 621.31, -709.752 )
+
+[node name="Bush294" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 345.699, -951.384 )
+
+[node name="Bush295" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 273.965, -551.181 )
+
+[node name="Bush296" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 194.679, -856.997 )
+
+[node name="Bush297" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 32.3328, -679.548 )
+
+[node name="Bush298" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( 66.3123, -898.527 )
+
+[node name="Bush299" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -88.4829, -977.812 )
+
+[node name="Bush300" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -197.972, -736.181 )
+
+[node name="Bush301" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -292.36, -932.506 )
+
+[node name="Bush302" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -428.277, -823.017 )
+
+[node name="Bush303" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -303.686, -543.63 )
+
+[node name="Bush304" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -922.868, -705.977 )
+
+[node name="Bush305" parent="Bushes" instance=ExtResource( 13 )]
+position = Vector2( -922.868, -705.977 )
