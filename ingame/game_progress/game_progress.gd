@@ -26,12 +26,15 @@ func on_boat_checkpoint_entered(boat: Node, checkpoint_index: int, checkpoint_co
 
 	match boat_progress.progress_to_checkpoint(checkpoint_index, checkpoint_count):
 		BoatProgress.CheckpointProgress.NEW_CHECKPOINT:
-			print("on_new_checkpoint")
+			get_tree().call_group("checkpoint_progress_listener", "on_boat_checkpoint_reached", boat, elapsed_time)
 		BoatProgress.CheckpointProgress.NEW_ROUND:
-			print("on_new_round")
+			get_tree().call_group("checkpoint_progress_listener", "on_boat_checkpoint_reached", boat, elapsed_time)
+			get_tree().call_group("checkpoint_progress_listener", "on_boat_new_round_reached", boat, boat_progress.rounds, elapsed_time)
 		BoatProgress.CheckpointProgress.GOING_BACKWARDS:
-			print("on_going_backwards")
+			get_tree().call_group("checkpoint_progress_listener", "on_boat_going_backwards", boat)
 		BoatProgress.CheckpointProgress.FINISHED:
+			get_tree().call_group("checkpoint_progress_listener", "on_boat_checkpoint_reached", boat, elapsed_time)
+			get_tree().call_group("checkpoint_progress_listener", "on_boat_new_round_reached", boat, boat_progress.rounds, elapsed_time)
 			finished_boats.append(FinishEntry.new(boat, elapsed_time))
 			var place = finished_boats.size()
 			var boat_count = boat_progresses.size()

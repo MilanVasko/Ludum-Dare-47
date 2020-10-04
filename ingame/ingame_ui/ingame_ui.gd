@@ -1,15 +1,30 @@
 extends Control
 
-onready var current_time_node = $Time
+onready var current_time_node = $Time/Value
 onready var countdown = $Countdown
 onready var finished = $Finished
+onready var rounds_current_node = $Rounds/Value/Current
+onready var rounds_max_node = $Rounds/Value/Max
 var viewport_index: int
 
 func _ready():
 	finished.visible = false
+	rounds_current_node.text = "0"
+	rounds_max_node.text = str(Settings.last_number_of_rounds)
 
 func is_finished():
 	return finished.visible
+
+func on_boat_checkpoint_reached(boat: Node, elapsed_time: float) -> void:
+	print("on_boat_checkpoint_reached")
+
+func on_boat_new_round_reached(boat: Node, new_round: int, elapsed_time: float) -> void:
+	if !boat.is_in_group("player") || boat.get_index() != viewport_index:
+		return
+	rounds_current_node.text = str(new_round)
+
+func on_boat_going_backwards(boat: Node) -> void:
+	print("on_boat_going_backwards")
 
 func on_boat_finished(boat: Node, _elapsed_time: float, place: int, boat_count: int) -> void:
 	if !boat.is_in_group("player") || boat.get_index() != viewport_index:
@@ -27,7 +42,6 @@ func on_elapsed_time_changed(new_elapsed_time: float) -> void:
 
 	var is_countdown = new_elapsed_time < 0.0
 	countdown.visible = is_countdown
-	current_time_node.visible = !is_countdown
 
 	if is_countdown:
 		var time_until_start = -new_elapsed_time
@@ -45,7 +59,7 @@ func on_elapsed_time_changed(new_elapsed_time: float) -> void:
 func format_time(time: float) -> String:
 	var seconds = int(time)
 	var minutes = seconds / 60
-	return "Time: " + str_padding(minutes) + ":" + str_padding(stepify((time - seconds) + (seconds % 60), 0.01))
+	return str_padding(minutes) + ":" + str_padding(stepify((time - seconds) + (seconds % 60), 0.01))
 
 func str_padding(number) -> String:
 	if number < 10:
