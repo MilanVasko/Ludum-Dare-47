@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://main_menu/play_menu/play_menu.gd" type="Script" id=1]
+[ext_resource path="res://ingame/race_tracks/circle/preview.png" type="Texture" id=2]
+[ext_resource path="res://ingame/race_tracks/serpentines/preview.png" type="Texture" id=3]
 
 [node name="PlayMenu" type="Control"]
 anchor_right = 1.0
@@ -76,31 +78,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Container/ScrollContainer"]
+[node name="VBoxContainer" type="GridContainer" parent="Container/ScrollContainer"]
 margin_right = 724.0
 margin_bottom = 295.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = 10
-__meta__ = {
-"_edit_use_anchors_": false
-}
+columns = 2
 
 [node name="Circle" type="Button" parent="Container/ScrollContainer/VBoxContainer"]
-margin_right = 724.0
+margin_right = 360.0
 margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
+rect_min_size = Vector2( 200, 50 )
+size_flags_horizontal = 3
 text = "Circle"
+icon = ExtResource( 2 )
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Serpentines" type="Button" parent="Container/ScrollContainer/VBoxContainer"]
-margin_top = 60.0
+margin_left = 364.0
 margin_right = 724.0
-margin_bottom = 110.0
+margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
 text = "Serpentines"
+icon = ExtResource( 3 )
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
