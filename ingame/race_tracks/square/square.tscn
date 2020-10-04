@@ -418,6 +418,7 @@ rotation = 4.71239
 position = Vector2( -1387.76, 0 )
 
 [node name="PlayerSpawnPoints" type="Node2D" parent="."]
+position = Vector2( 2, 70 )
 
 [node name="Player" type="Node2D" parent="PlayerSpawnPoints"]
 position = Vector2( -1475.73, 190.148 )
@@ -453,7 +454,6 @@ material_overrides = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Inner"]
-visible = false
 modulate = Color( 1, 1, 1, 0.3 )
 polygon = PoolVector2Array( 1024.85, -1024.48, 1034.69, 1025.55, -1019.76, 1031.6, -1035.63, -1029.18 )
 
@@ -477,9 +477,8 @@ material_overrides = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OuterRight"]
-visible = false
 modulate = Color( 1, 1, 1, 0.3 )
-polygon = PoolVector2Array( -2.31753, -1763.71, -12.7026, -3085.86, 3565.82, -2960.6, 3643.48, 3038.45, -2.77057, 3017.28, -2.77705, 1763.31, 1762.93, 1764.93, 1762.78, -1778.68 )
+polygon = PoolVector2Array( -2.31754, -1763.71, -12.7026, -3085.86, 3565.82, -2960.6, 3643.48, 3038.45, -2.77057, 3017.28, -2.77705, 1763.31, 1762.93, 1764.93, 1762.77, -1778.68 )
 
 [node name="OuterLeft" type="StaticBody2D" parent="."]
 
@@ -501,6 +500,5 @@ material_overrides = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OuterLeft"]
-visible = false
 modulate = Color( 1, 1, 1, 0.3 )
-polygon = PoolVector2Array( -1766.97, 1774.03, 3.17149, 1762.84, 57.2393, 3180.33, -3562.16, 3371.03, -3484.16, -3075.75, 6.74066, -3121.99, 2.83204, -1763.31, -1761.22, -1773.28 )
+polygon = PoolVector2Array( -1766.97, 1774.03, 3.17148, 1762.85, 57.2393, 3180.33, -3562.16, 3371.03, -3484.16, -3075.75, 6.74066, -3121.99, 2.83204, -1763.31, -1761.22, -1773.28 )
