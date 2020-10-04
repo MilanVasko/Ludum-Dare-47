@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ingame/race_tracks/serpentines/serpentines.png" type="Texture" id=1]
+[ext_resource path="res://ingame/checkpoint/checkpoint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ingame/finish_line/finish_line.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ingame/player/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ingame/race_tracks/serpentines/serpentines.gd" type="Script" id=5]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 50.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 444.694, 472.142 )
+
+[node name="RaceTrack" type="StaticBody2D"]
+physics_material_override = SubResource( 1 )
+script = ExtResource( 5 )
+player_scene = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -336.187, -226.184 )
+texture = ExtResource( 1 )
+
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource( 2 )]
+position = Vector2( -1930.7, -3162.09 )
+rotation = 1.06914
+
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource( 2 )]
+position = Vector2( 486.72, -2098.88 )
+rotation = 1.49835
+
+[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource( 2 )]
+position = Vector2( 2120.77, 49.2034 )
+rotation = 3.11965
+
+[node name="Checkpoint4" parent="Checkpoints" instance=ExtResource( 2 )]
+position = Vector2( 1060.38, 2703.34 )
+rotation = 4.71394
+
+[node name="Checkpoint5" parent="Checkpoints" instance=ExtResource( 2 )]
+position = Vector2( -1758.84, 1998.53 )
+rotation = 4.90402
+
+[node name="Checkpoint6" parent="Checkpoints" instance=ExtResource( 3 )]
+position = Vector2( -2011.6, -866.591 )
+
+[node name="Sprite" parent="Checkpoints/Checkpoint6" index="1"]
+region_rect = Rect2( 0, 0, 31.367, 10 )
+
+[node name="PlayerSpawnPoints" type="Node2D" parent="."]
+position = Vector2( -600.805, -809.341 )
+
+[node name="Player" type="Node2D" parent="PlayerSpawnPoints"]
+position = Vector2( -1475.73, 190.148 )
+
+[node name="Player2" type="Node2D" parent="PlayerSpawnPoints"]
+position = Vector2( -1642.33, 190.148 )
+
+[node name="Player3" type="Node2D" parent="PlayerSpawnPoints"]
+position = Vector2( -1312.69, 190.148 )
+
+[node name="Player4" type="Node2D" parent="PlayerSpawnPoints"]
+position = Vector2( -1163.91, 190.148 )
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="Inner" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -1770, 449.618, -1761.99, 190.659, -1705.93, -305.902, -1700.59, -695.675, -1721.95, -1568.66, -1778.01, -1774.22, -1951.54, -2006.49, -2074.35, -2252.1, -2055.66, -2559.11, -1930.18, -2796.71, -1691.86, -2958.87, -1527.06, -2986.26, -1381.8, -2945.57, -1240.53, -2839.62, -988.599, -2471.85, -806.447, -2316.61, -532.804, -2247.2, -377.963, -2236.52, -197.76, -2002.92, -4.20819, -1841.41, 274.773, -1757.31, 464.321, -1742.63, 759.32, -1806.7, 1095.7, -1974.89, 1239.86, -2169.78, 1484.14, -2372.67, 1561.56, -2452.76, 1701.72, -2471.45, 1799.16, -2300.59, 1868.77, -2070.56, 1868.77, -1953.09, 1668.54, -1774.22, 1193.34, -1616.71, 1025.15, -1496.58, 886.326, -1349.75, 776.87, -1130.83, 752.842, -933.276, 782.209, -754.407, 907.684, -564.861, 1057.19, -372.644, 1257.41, -249.838, 1863.43, -41.6035, 1772.66, 268.079, 1572.43, 663.192, 1470.99, 1010.25, 1446.96, 1330.61, 1481.66, 1637.62, 1564.42, 1955.32, 1564.42, 2211.61, 1190.67, 2371.79, 995.783, 2403.82, 686.1, 2398.48, 568.634, 2326.4, 544.607, 2163.55, 688.77, 1928.62, 771.53, 1648.3, 787.548, 1314.59, 718.136, 943.508, 579.313, 703.237, 419.133, 588.441, 373.748, 374.866, 237.594, 171.971, -32.0433, 57.1746, -237.609, 54.5049, -531.273, 201.337, -718.151, 398.894, -803.581, 697.898, -840.956, 1060.97, -1017.15, 1504.14, -1214.71, 1618.94, -1457.65, 1696.36, -1831.41, 1691.02, -2151.77, 1608.26, -2263.89, 1565.54, -2028.96, 1367.99, -1866.11, 1098.35, -1794.03, 834.051 )
+
+[node name="Outer" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -2678.87, -2401.21, -2702.84, -2598.99, -2621.93, -2814.74, -2472.1, -3129.39, -2226.38, -3369.12, -1860.79, -3566.89, -1573.12, -3611.84, -1240.49, -3563.9, -997.766, -3444.03, -719.081, -3186.32, -509.319, -2877.67, -401.441, -2880.67, -74.8097, -2802.76, 128.96, -2679.9, 209.868, -2497.1, 293.774, -2398.21, 425.625, -2368.25, 683.334, -2461.14, 728.283, -2542.05, 941.042, -2751.81, 1174.78, -2955.58, 1396.53, -3063.46, 1693.19, -3105.41, 1908.95, -3075.45, 2157.67, -2910.63, 2301.51, -2718.85, 2433.36, -2386.23, 2511.27, -1981.68, 2421.37, -1640.07, 2214.6, -1415.32, 1905.95, -1184.58, 1459.46, -1043.74, 1387.54, -965.832, 1468.45, -848.964, 1666.22, -762.062, 2073.76, -654.184, 2256.56, -525.33, 2454.33, -255.635, 2508.27, -45.8717, 2400.39, 388.637, 2121.71, 990.957, 2079.76, 1359.54, 2184.64, 1856.98, 2190.63, 2249.53, 2136.69, 2486.27, 1956.89, 2726, 1639.25, 2866.84, 1270.67, 3007.68, 884.106, 3034.65, 539.495, 3010.68, 236.837, 2872.83, 42.0574, 2675.05, -68.8175, 2399.37, -74.8107, 2147.65, -8.88501, 1844.99, 125.963, 1638.23, 161.922, 1371.53, 113.976, 1140.79, -65.8207, 981.967, -173.699, 784.19, -221.645, 1191.73, -419.421, 1713.14, -599.218, 1976.84, -913.862, 2180.61, -1270.46, 2303.47, -1749.92, 2327.45, -2232.37, 2249.53, -2585.97, 2105.7, -2834.69, 1907.92, -2954.56, 1713.14, -2948.56, 1533.34, -2888.63, 1287.62, -2777.76, 1143.78, -2520.05, 972.977, -2439.14, 841.126, -2397.19, 586.414, -2403.18, 292.746, -2370.21, 35.0366, -2321.95, -459.057, -2331.2, -696.19, -2351.72, -1058.96, -4308.44, -1208.52, -4240.48, 2468.81, -1423.96, 4311.26, 3718.27, 4356.56, 3959.9, 218.618, 3273.61, -5044.71, -3507.18, -4448.18, -4217.82, -1427.78, -2344.07, -1327.73, -2340.1, -1364.63, -2339.8, -1466.31, -2354.07, -1509.12, -2565.26, -1775.07, -2714.83, -2239.39 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2787.2, -884.986 )
+shape = SubResource( 2 )
+
+[editable path="Checkpoints/Checkpoint4"]
+
+[editable path="Checkpoints/Checkpoint5"]
+
+[editable path="Checkpoints/Checkpoint6"]
