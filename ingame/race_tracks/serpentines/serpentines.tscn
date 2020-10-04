@@ -1,6 +1,6 @@
-[gd_scene load_steps=192 format=2]
+[gd_scene load_steps=191 format=2]
 
-[ext_resource path="res://ingame/race_tracks/serpentines/water.png" type="Texture" id=1]
+[ext_resource path="res://ingame/race_tracks/water.png" type="Texture" id=1]
 [ext_resource path="res://ingame/checkpoint/checkpoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ingame/finish_line/finish_line.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ingame/player/player.tscn" type="PackedScene" id=4]
@@ -10,23 +10,13 @@
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=8]
 [ext_resource path="res://addons/rmsmartshape/vertex_properties.gd" type="Script" id=9]
 [ext_resource path="res://addons/rmsmartshape/shapes/shape_closed.gd" type="Script" id=10]
+[ext_resource path="res://ingame/race_tracks/wall_texture.tres" type="Texture" id=11]
 
-[sub_resource type="OpenSimplexNoise" id=3]
-octaves = 9
-period = 256.0
-persistence = 0.498
-lacunarity = 1.97
-
-[sub_resource type="NoiseTexture" id=4]
-width = 1024
-height = 1024
-seamless = true
-noise = SubResource( 3 )
 
 [sub_resource type="Resource" id=136]
 script = ExtResource( 7 )
 _edge_meta_materials = [  ]
-fill_textures = [ SubResource( 4 ) ]
+fill_textures = [ ExtResource( 11 ) ]
 fill_texture_normals = [  ]
 fill_texture_z_index = -10
 fill_mesh_offset = 0.0
@@ -367,7 +357,7 @@ _next_key = 23
 [sub_resource type="Resource" id=5]
 script = ExtResource( 7 )
 _edge_meta_materials = [  ]
-fill_textures = [ SubResource( 4 ) ]
+fill_textures = [ ExtResource( 11 ) ]
 fill_texture_normals = [  ]
 fill_texture_z_index = -10
 fill_mesh_offset = 0.0
