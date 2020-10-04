@@ -11,7 +11,7 @@ func _ready():
 	update_summary(player_names)
 
 func _on_back_pressed():
-	var err = get_tree().change_scene("res://main_menu/play_menu/rounds_menu/game_mode_menu/game_mode_menu.tscn")
+	var err = get_tree().change_scene("res://main_menu/play_menu/game_mode_menu/game_mode_menu.tscn")
 	assert(err == OK)
 
 func _on_play_pressed():
