@@ -1,5 +1,8 @@
 extends Control
 
+export(NodePath) var viewport_container_path
+onready var viewport_container_node = get_node(viewport_container_path)
+
 onready var current_time_node = $Time/Value
 onready var countdown = $Countdown
 onready var finished = $Finished
@@ -8,7 +11,6 @@ onready var rounds_max_node = $Rounds/Value/Max
 onready var checkpoints_node = $Checkpoints
 onready var checkpoints_current_node = $Checkpoints/Value/Current
 onready var checkpoints_max_node = $Checkpoints/Value/Max
-var viewport_index: int
 
 func _ready():
 	finished.visible = false
@@ -18,18 +20,25 @@ func _ready():
 	checkpoints_current_node.text = "0"
 	checkpoints_max_node.text = "X"
 
+	var player_names = Settings.get_non_empty_player_names()
+	if !player_names.empty():
+		$PlayerName.text = player_names[get_viewport_index()]
+
 func is_finished():
 	return finished.visible
 
+func get_viewport_index() -> int:
+	return viewport_container_node.get_index()
+
 func on_boat_checkpoint_reached(boat: Node, checkpoint_index: int, checkpoint_count: int, elapsed_time: float) -> void:
-	if !boat.is_in_group("player") || boat.get_index() != viewport_index:
+	if !boat.is_in_group("player") || boat.get_index() != get_viewport_index():
 		return
 	checkpoints_node.visible = true
 	checkpoints_current_node.text = str(checkpoint_index + 1)
 	checkpoints_max_node.text = str(checkpoint_count)
 
 func on_boat_new_round_reached(boat: Node, new_round: int, elapsed_time: float) -> void:
-	if !boat.is_in_group("player") || boat.get_index() != viewport_index:
+	if !boat.is_in_group("player") || boat.get_index() != get_viewport_index():
 		return
 	rounds_current_node.text = str(new_round)
 
@@ -37,7 +46,7 @@ func on_boat_going_backwards(boat: Node) -> void:
 	print("on_boat_going_backwards")
 
 func on_boat_finished(boat: Node, _elapsed_time: float, place: int, boat_count: int) -> void:
-	if !boat.is_in_group("player") || boat.get_index() != viewport_index:
+	if !boat.is_in_group("player") || boat.get_index() != get_viewport_index():
 		return
 
 	finished.visible = true

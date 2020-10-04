@@ -15,6 +15,9 @@ viewport_container_scene = ExtResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ViewportContainer0" parent="CanvasLayer/GridContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
