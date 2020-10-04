@@ -2,9 +2,6 @@
 
 [ext_resource path="res://main_menu/play_menu/game_mode_menu/race_with_friends_menu/player_settings/player_settings.gd" type="Script" id=1]
 
-
-
-
 [node name="PlayerSettings" type="Panel"]
 margin_right = 300.0
 margin_bottom = 300.0
@@ -20,7 +17,7 @@ anchor_bottom = 1.0
 margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
-margin_bottom = 10.0
+margin_bottom = -10.0
 custom_constants/separation = 10
 __meta__ = {
 "_edit_use_anchors_": false
@@ -52,4 +49,44 @@ caret_blink_speed = 0.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Controls" type="VBoxContainer" parent="HBoxContainer"]
+margin_top = 80.0
+margin_right = 280.0
+margin_bottom = 210.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UseLeftPaddle" type="VBoxContainer" parent="HBoxContainer/Controls"]
+margin_right = 280.0
+margin_bottom = 60.0
+
+[node name="Label" type="Label" parent="HBoxContainer/Controls/UseLeftPaddle"]
+margin_right = 280.0
+margin_bottom = 25.0
+text = "Left paddle:"
+
+[node name="Value" type="Button" parent="HBoxContainer/Controls/UseLeftPaddle"]
+margin_top = 29.0
+margin_right = 280.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+
+[node name="UseRightPaddle" type="VBoxContainer" parent="HBoxContainer/Controls"]
+margin_top = 70.0
+margin_right = 280.0
+margin_bottom = 130.0
+
+[node name="Label" type="Label" parent="HBoxContainer/Controls/UseRightPaddle"]
+margin_right = 280.0
+margin_bottom = 25.0
+text = "Right paddle:"
+
+[node name="Value" type="Button" parent="HBoxContainer/Controls/UseRightPaddle"]
+margin_top = 29.0
+margin_right = 280.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
 [connection signal="text_changed" from="HBoxContainer/Name/Value" to="." method="_on_name_changed"]

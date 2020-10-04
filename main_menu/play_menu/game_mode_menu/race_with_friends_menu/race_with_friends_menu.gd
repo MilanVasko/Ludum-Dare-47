@@ -4,11 +4,7 @@ onready var summary = $Summary
 onready var play = $Play
 
 func _ready():
-	var player_names = Settings.player_names
-	assert(player_names.size() == 4)
-	for i in range(player_names.size()):
-		$HBoxContainer.get_child(i).set_player_name(player_names[i])
-	update_summary(player_names)
+	update_summary()
 
 func _on_back_pressed():
 	var err = get_tree().change_scene("res://main_menu/play_menu/game_mode_menu/game_mode_menu.tscn")
@@ -18,11 +14,10 @@ func _on_play_pressed():
 	var err = get_tree().change_scene("res://ingame/split_screen/split_screen.tscn")
 	assert(err == OK)
 
-func _on_name_changed(index: int, new_name: String):
-	Settings.player_names[index] = new_name
-	update_summary(Settings.player_names)
+func on_player_name_changed(_index: int, _new_name: String):
+	update_summary()
 
-func update_summary(names: Array) -> void:
+func update_summary() -> void:
 	var non_empty_names = Settings.get_non_empty_player_names()
 
 	if non_empty_names.size() < 2:
