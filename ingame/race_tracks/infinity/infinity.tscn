@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://ingame/checkpoint/checkpoint.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://addons/rmsmartshape/vertex_properties.gd" type="Script" id=9]
 [ext_resource path="res://addons/rmsmartshape/shapes/shape_closed.gd" type="Script" id=10]
 [ext_resource path="res://ingame/race_tracks/water.png" type="Texture" id=11]
+[ext_resource path="res://ingame/race_tracks/arrow.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 6 )
@@ -549,11 +550,61 @@ position = Vector2( -1312.69, 190.148 )
 [node name="Player4" type="Node2D" parent="PlayerSpawnPoints"]
 position = Vector2( -1163.91, 190.148 )
 
+[node name="Arrows" type="Node2D" parent="."]
+
+[node name="Arrow" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( -1212.26, -655.518 )
+rotation = 0.510451
+
+[node name="Arrow2" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( 17.9599, -1364.91 )
+rotation = 1.57021
+
+[node name="Arrow3" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( 1400.83, -547.761 )
+rotation = 2.39148
+
+[node name="Arrow4" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( 2294.31, 498.373 )
+rotation = 2.32207
+
+[node name="Arrow5" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( 3798.41, 1378.38 )
+rotation = 1.58275
+
+[node name="Arrow6" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( 4997.2, 695.926 )
+rotation = 0.526099
+
+[node name="Arrow7" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( 5024.14, -547.762 )
+rotation = -0.299551
+
+[node name="Arrow8" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( 3793.92, -1378.38 )
+rotation = -1.58653
+
+[node name="Arrow9" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( 2249.41, -453.475 )
+rotation = -2.3576
+
+[node name="Arrow10" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( 959.371, 976.603 )
+rotation = -2.24411
+
+[node name="Arrow11" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( -4.48962, 1400.83 )
+rotation = -1.57426
+
+[node name="Arrow12" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( -1077.56, 929.398 )
+rotation = -0.594016
+
 [node name="Players" type="Node2D" parent="."]
 
-[node name="Inner" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="Inner" type="Node2D" parent="Inner"]
+[node name="InnerLeft" type="Node2D" parent="StaticBody2D"]
 script = ExtResource( 10 )
 editor_debug = false
 flip_edges = false
@@ -563,22 +614,23 @@ collision_offset = 0.0
 tessellation_stages = 5
 tessellation_tolerence = 4.0
 curve_bake_interval = 20.0
-collision_polygon_node_path = NodePath("../../Inner/CollisionPolygon2D")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 shape_material = SubResource( 1 )
 _points = SubResource( 12 )
 material_overrides = {
 
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Inner"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
 modulate = Color( 1, 1, 1, 0.3 )
-polygon = PoolVector2Array( -0.0127388, -1023.98, 62.8141, -1020.85, 126.216, -1012.12, 190.025, -998.159, 254.075, -979.355, 382.215, -928.674, 509.289, -863.069, 754.833, -699.031, 979.923, -511.175, 1325.59, -159.695, 1463.65, -0.0344778, 1330.06, 159.312, 992.653, 510.871, 769.822, 698.752, 523.692, 862.82, 394.896, 928.463, 263.886, 979.214, 131.851, 1012.05, 65.8252, 1020.82, -0.00387837, 1024.02, -126.931, 1017.85, -245.047, 998.99, -354.442, 968.505, -455.208, 927.462, -547.434, 876.93, -631.213, 817.975, -706.635, 751.665, -773.793, 679.067, -832.776, 601.248, -883.679, 519.276, -926.59, 434.217, -961.602, 347.139, -988.806, 259.109, -1008.29, 171.193, -1020.16, 84.4593, -1024.49, -0.0263618, -1020.82, -84.5046, -1008.7, -171.217, -988.22, -259.1, -959.459, -347.091, -922.506, -434.124, -877.448, -519.135, -824.369, -601.062, -763.357, -678.84, -694.499, -751.404, -617.879, -817.691, -533.584, -876.637, -441.701, -927.176, -342.316, -968.246, -235.515, -998.781, -121.385, -1017.72 )
+polygon = PoolVector2Array( -0.0127388, -1023.98, 62.8142, -1020.85, 126.216, -1012.12, 190.025, -998.159, 254.076, -979.355, 382.216, -928.674, 509.29, -863.069, 754.834, -699.031, 979.924, -511.175, 1325.59, -159.695, 1463.66, -0.0344777, 1330.06, 159.312, 992.654, 510.871, 769.823, 698.752, 523.692, 862.82, 394.896, 928.463, 263.886, 979.214, 131.851, 1012.05, 65.8252, 1020.82, -0.00387837, 1024.02, -126.931, 1017.85, -245.047, 998.99, -354.442, 968.505, -455.208, 927.462, -547.434, 876.93, -631.213, 817.975, -706.635, 751.665, -773.793, 679.067, -832.776, 601.248, -883.679, 519.276, -926.59, 434.217, -961.602, 347.139, -988.806, 259.109, -1008.29, 171.193, -1020.16, 84.4593, -1024.49, -0.0263618, -1020.82, -84.5046, -1008.7, -171.217, -988.22, -259.1, -959.459, -347.091, -922.506, -434.124, -877.448, -519.135, -824.369, -601.062, -763.357, -678.84, -694.499, -751.404, -617.879, -817.691, -533.584, -876.637, -441.701, -927.176, -342.316, -968.246, -235.515, -998.781, -121.385, -1017.72 )
 
-[node name="Inner2" type="StaticBody2D" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2( 3803.41, 0 )
-rotation = 3.14159
 
-[node name="Inner" type="Node2D" parent="Inner2"]
+[node name="InnerRight" type="Node2D" parent="StaticBody2D2"]
+rotation = 3.14159
 script = ExtResource( 10 )
 editor_debug = false
 flip_edges = false
@@ -588,20 +640,21 @@ collision_offset = 0.0
 tessellation_stages = 5
 tessellation_tolerence = 4.0
 curve_bake_interval = 20.0
-collision_polygon_node_path = NodePath("../../Inner/CollisionPolygon2D")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 shape_material = SubResource( 1 )
 _points = SubResource( 23 )
 material_overrides = {
 
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Inner2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+visible = false
 modulate = Color( 1, 1, 1, 0.3 )
-polygon = PoolVector2Array( -0.0127388, -1023.98, 62.8141, -1020.85, 126.216, -1012.12, 190.025, -998.159, 254.075, -979.355, 382.215, -928.674, 509.289, -863.069, 754.833, -699.031, 979.923, -511.175, 1325.59, -159.695, 1463.65, -0.0344778, 1330.06, 159.312, 992.653, 510.871, 769.822, 698.752, 523.692, 862.82, 394.896, 928.463, 263.886, 979.214, 131.851, 1012.05, 65.8252, 1020.82, -0.00387837, 1024.02, -126.931, 1017.85, -245.047, 998.99, -354.442, 968.505, -455.208, 927.462, -547.434, 876.93, -631.213, 817.975, -706.635, 751.665, -773.793, 679.067, -832.776, 601.248, -883.679, 519.276, -926.59, 434.217, -961.602, 347.139, -988.806, 259.109, -1008.29, 171.193, -1020.16, 84.4593, -1024.49, -0.0263618, -1020.82, -84.5046, -1008.7, -171.217, -988.22, -259.1, -959.459, -347.091, -922.506, -434.124, -877.448, -519.135, -824.369, -601.062, -763.357, -678.84, -694.499, -751.404, -617.879, -817.691, -533.584, -876.637, -441.701, -927.176, -342.316, -968.246, -235.515, -998.781, -121.385, -1017.72 )
+polygon = PoolVector2Array( 0.0153809, 1023.98, -62.8115, 1020.85, -126.213, 1012.12, -190.022, 998.16, -254.073, 979.356, -382.213, 928.675, -509.288, 863.07, -754.832, 699.033, -979.923, 511.177, -1325.59, 159.698, -1463.66, 0.0381884, -1330.06, -159.309, -992.655, -510.869, -769.824, -698.75, -523.695, -862.819, -394.898, -928.462, -263.889, -979.213, -131.854, -1012.05, -65.8276, -1020.82, 0.0012207, -1024.02, 126.929, -1017.85, 245.045, -998.99, 354.44, -968.505, 455.205, -927.463, 547.432, -876.931, 631.211, -817.976, 706.633, -751.666, 773.791, -679.068, 832.775, -601.25, 883.677, -519.278, 926.589, -434.22, 961.601, -347.142, 988.805, -259.112, 1008.29, -171.196, 1020.16, -84.4619, 1024.49, 0.0237646, 1020.82, 84.502, 1008.7, 171.215, 988.22, 259.098, 959.46, 347.088, 922.507, 434.121, 877.449, 519.133, 824.371, 601.06, 763.359, 678.838, 694.501, 751.402, 617.881, 817.69, 533.587, 876.635, 441.704, 927.175, 342.319, 968.245, 235.518, 998.78, 121.388, 1017.72 )
 
-[node name="OuterLeft" type="StaticBody2D" parent="."]
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
 
-[node name="OuterLeft" type="Node2D" parent="OuterLeft"]
+[node name="OuterLeft" type="Node2D" parent="StaticBody2D3"]
 script = ExtResource( 10 )
 editor_debug = false
 flip_edges = false
@@ -611,21 +664,22 @@ collision_offset = 0.0
 tessellation_stages = 5
 tessellation_tolerence = 4.0
 curve_bake_interval = 20.0
-collision_polygon_node_path = NodePath("../../OuterLeft/CollisionPolygon2D")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 shape_material = SubResource( 24 )
 _points = SubResource( 45 )
 material_overrides = {
 
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OuterLeft"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+visible = false
 modulate = Color( 1, 1, 1, 0.3 )
-polygon = PoolVector2Array( -1766.9, 0.00198098, -1754.8, 219.417, -1719.04, 423.602, -1661.87, 612.706, -1585.57, 786.878, -1492.38, 946.265, -1384.57, 1091.02, -1264.41, 1221.28, -1134.14, 1337.2, -996.046, 1438.93, -852.374, 1526.61, -705.39, 1600.4, -557.355, 1660.44, -410.532, 1706.88, -267.183, 1739.87, -129.568, 1759.55, 0.0493668, 1766.07, 64.0555, 1762.74, 130.991, 1753, 272.358, 1716.06, 421.548, 1658.67, 575.949, 1584.22, 889.985, 1397.82, 1193.63, 1184.13, 1890.81, 594.425, 2293.32, 3812.38, -3657.96, 3722.92, -3559.02, -3652.64, 2713.01, -3463.7, 1891.65, -580.366, 1241.15, -1176.92, 944.992, -1393.18, 628.452, -1581.91, 467.676, -1657.3, 307.976, -1715.42, 151.423, -1752.83, 74.9713, -1762.7, 0.0778504, -1766.08, -149.864, -1759.55, -302.45, -1739.87, -455.983, -1706.88, -608.769, -1660.44, -759.114, -1600.4, -905.32, -1526.61, -1045.69, -1438.92, -1178.54, -1337.2, -1302.16, -1221.27, -1414.87, -1091.01, -1514.96, -946.262, -1600.74, -786.875, -1670.52, -612.704, -1722.61, -423.6, -1755.3, -219.414 )
+polygon = PoolVector2Array( -1766.9, 0.00198098, -1754.8, 219.416, -1719.04, 423.601, -1661.87, 612.705, -1585.57, 786.876, -1492.38, 946.263, -1384.57, 1091.01, -1264.41, 1221.28, -1134.14, 1337.2, -996.046, 1438.93, -852.373, 1526.61, -705.389, 1600.4, -557.355, 1660.44, -410.532, 1706.88, -267.183, 1739.87, -129.568, 1759.55, 0.0493668, 1766.07, 64.0555, 1762.74, 130.991, 1753, 272.358, 1716.06, 421.548, 1658.67, 575.949, 1584.22, 889.984, 1397.82, 1193.63, 1184.13, 1890.81, 594.425, 2293.32, 3812.38, -3657.96, 3722.92, -3559.02, -3652.64, 2713.01, -3463.7, 1891.65, -580.366, 1241.15, -1176.92, 944.992, -1393.18, 628.452, -1581.91, 467.676, -1657.3, 307.976, -1715.42, 151.423, -1752.83, 74.9713, -1762.7, 0.0778504, -1766.08, -149.864, -1759.55, -302.45, -1739.87, -455.983, -1706.88, -608.77, -1660.44, -759.114, -1600.4, -905.32, -1526.61, -1045.69, -1438.92, -1178.54, -1337.19, -1302.16, -1221.27, -1414.87, -1091.01, -1514.96, -946.26, -1600.74, -786.874, -1670.52, -612.703, -1722.61, -423.599, -1755.3, -219.413 )
 
-[node name="OuterRight" type="StaticBody2D" parent="."]
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
 position = Vector2( -4.75684, 4.75684 )
 
-[node name="OuterRight" type="Node2D" parent="OuterRight"]
+[node name="OuterRight" type="Node2D" parent="StaticBody2D4"]
 script = ExtResource( 10 )
 editor_debug = false
 flip_edges = false
@@ -635,13 +689,14 @@ collision_offset = 0.0
 tessellation_stages = 5
 tessellation_tolerence = 4.0
 curve_bake_interval = 20.0
-collision_polygon_node_path = NodePath("../../OuterRight/CollisionPolygon2D")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 shape_material = SubResource( 46 )
 _points = SubResource( 67 )
 material_overrides = {
 
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OuterRight"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
+visible = false
 modulate = Color( 1, 1, 1, 0.3 )
-polygon = PoolVector2Array( 1891.04, -582.845, 1875.92, -3941.17, 7843.64, -4031.83, 8110.79, 3658.68, 1877.56, 3717.46, 1888.99, 589.584, 2549.38, 1182.75, 2846.87, 1397.42, 3162.81, 1584.78, 3322.32, 1659.62, 3479.96, 1717.31, 3633.57, 1754.45, 3708.18, 1764.24, 3780.98, 1767.6, 3853.44, 1764.67, 3927.08, 1756.03, 4076.97, 1722.56, 4228.84, 1669.08, 4380.86, 1597.4, 4531.19, 1509.38, 4678.03, 1406.88, 4819.54, 1291.76, 4953.89, 1165.86, 5193.85, 889.164, 5295.82, 742.079, 5383.33, 591.627, 5454.56, 439.67, 5507.7, 288.062, 5540.93, 138.661, 5549.52, 65.3648, 5552.41, -6.68682, 5543.49, -152.035, 5517.28, -301.44, 5474.57, -453.046, 5416.18, -605.002, 5342.91, -755.452, 5255.57, -902.544, 5154.96, -1044.42, 5041.89, -1179.24, 4917.18, -1305.13, 4781.62, -1420.25, 4636.02, -1522.75, 4481.19, -1610.76, 4317.95, -1682.44, 4147.08, -1735.94, 3969.41, -1769.39, 3785.74, -1780.97, 3692.84, -1777.56, 3600.67, -1767.61, 3419.04, -1729.88, 3242.03, -1671.26, 3070.81, -1595.22, 2906.55, -1505.25, 2750.42, -1404.82, 2467.27, -1186.55, 2050.13, -777.905 )
+polygon = PoolVector2Array( 1891.05, -582.844, 1875.92, -3941.17, 7843.64, -4031.83, 8110.79, 3658.68, 1877.56, 3717.46, 1888.99, 589.584, 2549.38, 1182.75, 2846.87, 1397.42, 3162.81, 1584.78, 3322.32, 1659.62, 3479.96, 1717.31, 3633.57, 1754.45, 3708.18, 1764.24, 3780.98, 1767.6, 3853.44, 1764.67, 3927.08, 1756.03, 4076.97, 1722.56, 4228.84, 1669.07, 4380.86, 1597.39, 4531.19, 1509.38, 4678.03, 1406.88, 4819.54, 1291.76, 4953.88, 1165.86, 5193.85, 889.164, 5295.82, 742.079, 5383.33, 591.627, 5454.56, 439.67, 5507.7, 288.062, 5540.93, 138.661, 5549.51, 65.3648, 5552.41, -6.68682, 5543.49, -152.035, 5517.28, -301.44, 5474.57, -453.046, 5416.18, -605.002, 5342.91, -755.452, 5255.57, -902.543, 5154.96, -1044.42, 5041.89, -1179.24, 4917.18, -1305.13, 4781.62, -1420.25, 4636.02, -1522.74, 4481.2, -1610.76, 4317.95, -1682.44, 4147.08, -1735.93, 3969.41, -1769.39, 3785.74, -1780.96, 3692.84, -1777.56, 3600.67, -1767.61, 3419.04, -1729.88, 3242.03, -1671.26, 3070.81, -1595.22, 2906.55, -1505.25, 2750.42, -1404.82, 2467.28, -1186.55, 2050.14, -777.905 )

@@ -42,7 +42,8 @@ func on_boat_new_round_reached(boat: Node, new_round: int, elapsed_time: float) 
 	rounds_current_node.text = str(new_round)
 
 func on_boat_going_backwards(boat: Node) -> void:
-	print("on_boat_going_backwards")
+	if !boat.is_in_group("player") || boat.get_index() != get_viewport_index():
+		return
 
 func on_boat_finished(boat: Node, _elapsed_time: float, place: int, boat_count: int) -> void:
 	if !boat.is_in_group("player") || boat.get_index() != get_viewport_index():
@@ -50,7 +51,7 @@ func on_boat_finished(boat: Node, _elapsed_time: float, place: int, boat_count: 
 
 	finished.visible = true
 	if place == 1:
-		finished.text = "You've won!"
+		finished.text = "You won!"
 	else:
 		finished.text = "Place: " + str(place) + "/" + str(boat_count)
 

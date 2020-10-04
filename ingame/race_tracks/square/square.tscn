@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://ingame/checkpoint/checkpoint.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://addons/rmsmartshape/vertex_properties.gd" type="Script" id=9]
 [ext_resource path="res://addons/rmsmartshape/shapes/shape_closed.gd" type="Script" id=10]
 [ext_resource path="res://ingame/race_tracks/water.png" type="Texture" id=11]
+[ext_resource path="res://ingame/race_tracks/arrow.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 6 )
@@ -431,6 +432,39 @@ position = Vector2( -1312.69, 190.148 )
 
 [node name="Player4" type="Node2D" parent="PlayerSpawnPoints"]
 position = Vector2( -1163.91, 190.148 )
+
+[node name="Arrows" type="Node2D" parent="."]
+
+[node name="Arrow" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( -1384, -632 )
+
+[node name="Arrow2" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( -872, -1400 )
+rotation = 1.57079
+
+[node name="Arrow3" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( 664, -1412 )
+rotation = 1.57079
+
+[node name="Arrow4" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( 1416, -780 )
+rotation = 3.14159
+
+[node name="Arrow5" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( 1384, 704 )
+rotation = 3.14159
+
+[node name="Arrow6" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( 588, 1420 )
+rotation = 4.71238
+
+[node name="Arrow7" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( -560, 1388 )
+rotation = 4.71238
+
+[node name="Arrow8" parent="Arrows" instance=ExtResource( 12 )]
+position = Vector2( -1376, 868 )
+rotation = 6.28318
 
 [node name="Players" type="Node2D" parent="."]
 
