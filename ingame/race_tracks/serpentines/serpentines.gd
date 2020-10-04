@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 export(PackedScene) var player_scene: PackedScene
 
