@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://ingame/checkpoint/checkpoint.tscn" type="PackedScene" id=2]
@@ -10,9 +10,17 @@
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=8]
 [ext_resource path="res://addons/rmsmartshape/vertex_properties.gd" type="Script" id=9]
 [ext_resource path="res://addons/rmsmartshape/shapes/shape_closed.gd" type="Script" id=10]
-[ext_resource path="res://ingame/race_tracks/water.png" type="Texture" id=11]
+[ext_resource path="res://ingame/environment/water.shader" type="Shader" id=11]
 [ext_resource path="res://ingame/environment/arrow/arrow.tscn" type="PackedScene" id=12]
 [ext_resource path="res://ingame/environment/bush/bush.tscn" type="PackedScene" id=13]
+[ext_resource path="res://white.png" type="Texture" id=14]
+
+[sub_resource type="ShaderMaterial" id=53]
+shader = ExtResource( 11 )
+shader_param/texture_color = Plane( 0.259, 0.807, 1, 1 )
+shader_param/zoom = 200.0
+shader_param/speed = 0.8
+shader_param/bright = 2.0
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 6 )
@@ -397,10 +405,11 @@ _next_key = 11
 script = ExtResource( 5 )
 player_scene = ExtResource( 4 )
 
-[node name="water" type="Sprite" parent="."]
-texture = ExtResource( 11 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 8000, 8000 )
+[node name="Water" type="Sprite" parent="."]
+material = SubResource( 53 )
+position = Vector2( 9.35979, 107.481 )
+scale = Vector2( 4169.58, 3106.61 )
+texture = ExtResource( 14 )
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
