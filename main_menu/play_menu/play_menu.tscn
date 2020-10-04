@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://main_menu/play_menu/play_menu.gd" type="Script" id=1]
 [ext_resource path="res://ingame/race_tracks/circle/preview.png" type="Texture" id=2]
 [ext_resource path="res://ingame/race_tracks/serpentines/preview.png" type="Texture" id=3]
+[ext_resource path="res://ingame/race_tracks/square/preview.png" type="Texture" id=4]
 
 [node name="PlayMenu" type="Control"]
 anchor_right = 1.0
@@ -109,6 +110,20 @@ expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Square" type="Button" parent="Container/ScrollContainer/VBoxContainer"]
+margin_top = 54.0
+margin_right = 360.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+text = "Square"
+icon = ExtResource( 4 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Container/ScrollContainer/VBoxContainer/Circle" to="." method="_on_circle_map_pressed"]
 [connection signal="pressed" from="Container/ScrollContainer/VBoxContainer/Serpentines" to="." method="_on_serpentines_map_pressed"]
+[connection signal="pressed" from="Container/ScrollContainer/VBoxContainer/Square" to="." method="_on_square_map_pressed"]

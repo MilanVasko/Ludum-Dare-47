@@ -20,9 +20,8 @@ func _ready():
 	checkpoints_current_node.text = "0"
 	checkpoints_max_node.text = "X"
 
-	var player_names = Settings.get_non_empty_player_names()
-	if !player_names.empty():
-		$PlayerName.text = player_names[get_viewport_index()]
+	if Settings.last_selected_game_mode == Settings.GameMode.RACE_WITH_FRIENDS:
+		$PlayerName.text = Settings.get_non_empty_player_names()[get_viewport_index()]
 
 func is_finished():
 	return finished.visible
