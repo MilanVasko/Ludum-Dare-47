@@ -6,11 +6,11 @@
 [ext_resource path="res://ingame/boat/boat_lower.png" type="Texture" id=4]
 [ext_resource path="res://ingame/boat/boat_upper.png" type="Texture" id=5]
 
-[sub_resource type="PhysicsMaterial" id=51]
+[sub_resource type="PhysicsMaterial" id=1]
 rough = true
 bounce = 1.0
 
-[sub_resource type="ParticlesMaterial" id=50]
+[sub_resource type="ParticlesMaterial" id=2]
 lifetime_randomness = 1.0
 emission_shape = 2
 emission_box_extents = Vector3( 40, 40, 1 )
@@ -33,7 +33,7 @@ color = Color( 0.654999, 0.936867, 0.992188, 1 )
 "boat",
 ]]
 mass = 10.0
-physics_material_override = SubResource( 51 )
+physics_material_override = SubResource( 1 )
 linear_damp = 0.8
 angular_damp = 1.0
 script = ExtResource( 2 )
@@ -41,7 +41,7 @@ script = ExtResource( 2 )
 [node name="Particles" type="Particles2D" parent="."]
 position = Vector2( 0, 36.907 )
 amount = 2000
-process_material = SubResource( 50 )
+process_material = SubResource( 2 )
 __meta__ = {
 "_editor_description_": "	"
 }

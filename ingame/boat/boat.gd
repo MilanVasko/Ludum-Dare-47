@@ -30,11 +30,11 @@ func _process(delta):
 
 func swing_left_paddle():
 	left_paddle.swing()
-	self.apply_impulse_local(right_paddle.position, Vector2.UP * impulse)
+	self.apply_impulse_local(left_paddle.position, Vector2.UP * impulse)
 
 func swing_right_paddle():
 	right_paddle.swing()
-	self.apply_impulse_local(left_paddle.position, Vector2.UP * impulse)
+	self.apply_impulse_local(right_paddle.position, Vector2.UP * impulse)
 
 func apply_impulse_local(force: Vector2, pos: Vector2):
 	var pos_local = self.transform.basis_xform(pos)
